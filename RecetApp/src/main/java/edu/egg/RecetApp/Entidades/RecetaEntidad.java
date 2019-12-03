@@ -3,11 +3,16 @@ package edu.egg.RecetApp.Entidades;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.GeneratedValue;
+import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 public class RecetaEntidad {
     
     @Id
+    @GeneratedValue(generator="uuid")
+    @GenericGenerator(name="uuid", strategy="uuid2")
     private String id;
     
     private String nombre;
@@ -17,6 +22,12 @@ public class RecetaEntidad {
     private boolean vegano;
     private boolean celiaco;
     private boolean carnivoro;
+    private Foto foto;
+    private Voto voto;
+    
+    @OneToMany
+    private IngredienteEntidad ingredienteentidad;
+    
 
     /**
      * @return the id
@@ -128,6 +139,48 @@ public class RecetaEntidad {
      */
     public void setCarnivoro(boolean carnivoro) {
         this.carnivoro = carnivoro;
+    }
+
+    /**
+     * @return the foto
+     */
+    public Foto getFoto() {
+        return foto;
+    }
+
+    /**
+     * @param foto the foto to set
+     */
+    public void setFoto(Foto foto) {
+        this.foto = foto;
+    }
+
+    /**
+     * @return the voto
+     */
+    public Voto getVoto() {
+        return voto;
+    }
+
+    /**
+     * @param voto the voto to set
+     */
+    public void setVoto(Voto voto) {
+        this.voto = voto;
+    }
+
+    /**
+     * @return the ingredienteentidad
+     */
+    public IngredienteEntidad getIngredienteentidad() {
+        return ingredienteentidad;
+    }
+
+    /**
+     * @param ingredienteentidad the ingredienteentidad to set
+     */
+    public void setIngredienteentidad(IngredienteEntidad ingredienteentidad) {
+        this.ingredienteentidad = ingredienteentidad;
     }
     
     

@@ -2,18 +2,25 @@ package edu.egg.RecetApp.Entidades;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.GeneratedValue;
+import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 public class IngredienteEntidad {
     
     @Id
+    @GeneratedValue(generator="uuid")
+    @GenericGenerator(name="uuid", strategy="uuid2")
     private String id;
     
     private String nombre;
     private Integer ccal;
+    
+    private Foto foto;
 
     /**
-     * @return the id
+     * @return the id b
+     * 
      */
     public String getId() {
         return id;
@@ -52,6 +59,20 @@ public class IngredienteEntidad {
      */
     public void setCcal(Integer ccal) {
         this.ccal = ccal;
+    }
+
+    /**
+     * @return the foto
+     */
+    public Foto getFoto() {
+        return foto;
+    }
+
+    /**
+     * @param foto the foto to set
+     */
+    public void setFoto(Foto foto) {
+        this.foto = foto;
     }
     
     
