@@ -8,7 +8,7 @@ import javax.persistence.GeneratedValue;
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
-public class RecetaEntidad {
+public class Receta {
     
     @Id
     @GeneratedValue(generator="uuid")
@@ -26,7 +26,7 @@ public class RecetaEntidad {
     private Voto voto;
     
     @OneToMany
-    private IngredienteEntidad ingredienteentidad;
+    private Ingrediente ingredienteentidad;
     
 
     /**
@@ -172,14 +172,14 @@ public class RecetaEntidad {
     /**
      * @return the ingredienteentidad
      */
-    public IngredienteEntidad getIngredienteentidad() {
+    public Ingrediente getIngredienteentidad() {
         return ingredienteentidad;
     }
 
     /**
      * @param ingredienteentidad the ingredienteentidad to set
      */
-    public void setIngredienteentidad(IngredienteEntidad ingredienteentidad) {
+    public void setIngredienteentidad(Ingrediente ingredienteentidad) {
         this.ingredienteentidad = ingredienteentidad;
     }
     

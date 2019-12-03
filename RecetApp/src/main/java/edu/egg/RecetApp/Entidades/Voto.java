@@ -1,4 +1,3 @@
-
 package edu.egg.RecetApp.Entidades;
 
 import javax.persistence.Entity;
@@ -16,7 +15,7 @@ public class Voto {
     private String id;
     
     @ManyToOne
-    private RecetaEntidad recetaentidad;
+    private Receta recetaentidad;
 
     /**
      * @return the id
@@ -35,14 +34,14 @@ public class Voto {
     /**
      * @return the recetaentidad
      */
-    public RecetaEntidad getRecetaentidad() {
+    public Receta getRecetaentidad() {
         return recetaentidad;
     }
 
     /**
      * @param recetaentidad the recetaentidad to set
      */
-    public void setRecetaentidad(RecetaEntidad recetaentidad) {
+    public void setRecetaentidad(Receta recetaentidad) {
         this.recetaentidad = recetaentidad;
     }
     

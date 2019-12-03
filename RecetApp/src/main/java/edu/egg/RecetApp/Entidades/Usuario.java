@@ -8,7 +8,7 @@ import javax.persistence.GeneratedValue;
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
-public class UsuarioEntidad {
+public class Usuario {
     
     @Id
     @GeneratedValue(generator="uuid")
@@ -22,7 +22,7 @@ public class UsuarioEntidad {
     private Foto foto;
 
     @OneToMany
-    private RecetaEntidad recetaentidad;
+    private Receta recetaentidad;
     /**
      * @return the id
      */
@@ -110,14 +110,14 @@ public class UsuarioEntidad {
     /**
      * @return the recetaentidad
      */
-    public RecetaEntidad getRecetaentidad() {
+    public Receta getRecetaentidad() {
         return recetaentidad;
     }
 
     /**
      * @param recetaentidad the recetaentidad to set
      */
-    public void setRecetaentidad(RecetaEntidad recetaentidad) {
+    public void setRecetaentidad(Receta recetaentidad) {
         this.recetaentidad = recetaentidad;
     }
 }

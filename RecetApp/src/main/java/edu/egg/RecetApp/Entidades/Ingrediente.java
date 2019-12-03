@@ -6,7 +6,7 @@ import javax.persistence.GeneratedValue;
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
-public class IngredienteEntidad {
+public class Ingrediente {
     
     @Id
     @GeneratedValue(generator="uuid")
