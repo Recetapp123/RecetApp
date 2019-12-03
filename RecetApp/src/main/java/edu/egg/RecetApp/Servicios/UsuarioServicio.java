@@ -1,5 +1,6 @@
 package edu.egg.RecetApp.Servicios;
 
+import edu.egg.RecetApp.Entidades.Foto;
 import edu.egg.RecetApp.Entidades.Usuario;
 import edu.egg.RecetApp.Errores.ErrorServicio;
 import javax.persistence.EntityManager;
@@ -23,6 +24,9 @@ public class UsuarioServicio {
         usuario.setApellido(apellido);
         usuario.setMail(mail);
         usuario.setClave(clave);
+//        Foto foto = fotoServicio.guardar(archivo);
+//       usuario.setFoto(foto);
+//        usuarioRepositorio.save(usuario);
 
     }
 
