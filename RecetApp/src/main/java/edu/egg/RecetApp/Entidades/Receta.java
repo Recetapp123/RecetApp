@@ -21,9 +21,7 @@ public class Receta {
     private boolean vegetariano;
     private boolean vegano;
     private boolean celiaco;
-    private boolean carnivoro;
     private Foto foto;
-    private Voto voto;
     
     @OneToMany
     private Ingrediente ingredienteentidad;
@@ -127,19 +125,7 @@ public class Receta {
         this.celiaco = celiaco;
     }
 
-    /**
-     * @return the carnivoro
-     */
-    public boolean isCarnivoro() {
-        return carnivoro;
-    }
 
-    /**
-     * @param carnivoro the carnivoro to set
-     */
-    public void setCarnivoro(boolean carnivoro) {
-        this.carnivoro = carnivoro;
-    }
 
     /**
      * @return the foto
@@ -155,20 +141,7 @@ public class Receta {
         this.foto = foto;
     }
 
-    /**
-     * @return the voto
-     */
-    public Voto getVoto() {
-        return voto;
-    }
-
-    /**
-     * @param voto the voto to set
-     */
-    public void setVoto(Voto voto) {
-        this.voto = voto;
-    }
-
+  
     /**
      * @return the ingredienteentidad
      */
