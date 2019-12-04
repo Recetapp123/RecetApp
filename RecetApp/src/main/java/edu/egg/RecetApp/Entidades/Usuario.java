@@ -1,10 +1,14 @@
 
 package edu.egg.RecetApp.Entidades;
 
+import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.GeneratedValue;
+import javax.persistence.OneToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
@@ -19,7 +23,12 @@ public class Usuario {
     private String apellido;
     private String clave;
     private String mail;
+    
+    @OneToOne
     private Foto foto;
+    
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date fechaBaja;
 
     @OneToMany
     private Receta recetaentidad;
@@ -119,6 +128,20 @@ public class Usuario {
      */
     public void setRecetaentidad(Receta recetaentidad) {
         this.recetaentidad = recetaentidad;
+    }
+
+    /**
+     * @return the fechaBaja
+     */
+    public Date getFechaBaja() {
+        return fechaBaja;
+    }
+
+    /**
+     * @param fechaBaja the fechaBaja to set
+     */
+    public void setFechaBaja(Date fechaBaja) {
+        this.fechaBaja = fechaBaja;
     }
 }
 
