@@ -4,6 +4,7 @@ import edu.egg.RecetApp.Servicios.UsuarioServicio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
@@ -15,7 +16,7 @@ public class UsuarioControlador {
     @Autowired
     UsuarioServicio usuarioServicio;
 
-    @GetMapping("/register")
+    @PostMapping("/register")
     public String registrar(@RequestParam(required = false) String id, @RequestParam MultipartFile archivo, @RequestParam String nombre, @RequestParam String apellido, @RequestParam String mail, @RequestParam String clave) {
         try{
             usuarioServicio.registrar(archivo, nombre, apellido, mail, clave);
