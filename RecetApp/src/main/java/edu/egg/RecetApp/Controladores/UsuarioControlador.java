@@ -17,16 +17,17 @@ public class UsuarioControlador {
     @Autowired
     UsuarioServicio usuarioServicio;
     
-//    @GetMapping("/register")
-//    public String register(){
-//        return "Register";
-//    }
+    @GetMapping("/")
+    public String register(){
+        return "register.html";
+    }
 
     @GetMapping("/register")
-    public String registrar(@RequestParam(required = false) String id, @RequestParam (required = false) MultipartFile archivo, @RequestParam String nombre, @RequestParam String apellido, @RequestParam String mail, @RequestParam String clave) {
+    public String register(@RequestParam(required = false) String id, @RequestParam (required = false) MultipartFile archivo, @RequestParam (required = false) String nombre, @RequestParam (required = false) String apellido, @RequestParam String mail, @RequestParam (required = false) String clave) {
         try{
-//             usuarioServicio.registrar(archivo, nombre, apellido, mail, clave);
-            usuarioServicio.registrar(null, "Fabri", "Perez", "elo@hotmail.com", "12345678899");
+             usuarioServicio.registrar(archivo, nombre, apellido, mail, clave);
+             System.out.println(nombre+apellido+mail+clave);
+//            usuarioServicio.registrar(null, "Fabri", "Perez", "elo@hotmail.com", "12345678899");
         } catch (Exception ex){
             return "redirect:/usuario/register?id=" + id + "&error=" + ex.getMessage();
         }
