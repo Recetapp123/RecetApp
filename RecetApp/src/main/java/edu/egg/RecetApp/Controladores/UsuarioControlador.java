@@ -13,13 +13,20 @@ import org.springframework.web.multipart.MultipartFile;
 @RequestMapping("/usuario")
 public class UsuarioControlador {
 
+    
     @Autowired
     UsuarioServicio usuarioServicio;
+    
+//    @GetMapping("/register")
+//    public String register(){
+//        return "Register";
+//    }
 
-    @PostMapping("/register")
-    public String registrar(@RequestParam(required = false) String id, @RequestParam MultipartFile archivo, @RequestParam String nombre, @RequestParam String apellido, @RequestParam String mail, @RequestParam String clave) {
+    @GetMapping("/register")
+    public String registrar(@RequestParam(required = false) String id, @RequestParam (required = false) MultipartFile archivo, @RequestParam String nombre, @RequestParam String apellido, @RequestParam String mail, @RequestParam String clave) {
         try{
-            usuarioServicio.registrar(archivo, nombre, apellido, mail, clave);
+//             usuarioServicio.registrar(archivo, nombre, apellido, mail, clave);
+            usuarioServicio.registrar(null, "Fabri", "Perez", "elo@hotmail.com", "12345678899");
         } catch (Exception ex){
             return "redirect:/usuario/register?id=" + id + "&error=" + ex.getMessage();
         }
