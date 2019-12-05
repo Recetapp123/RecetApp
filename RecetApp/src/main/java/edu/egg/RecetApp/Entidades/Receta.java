@@ -35,6 +35,9 @@ public class Receta {
     @OneToMany
     private Ingrediente ingredienteentidad;
     
+    @OneToMany
+    private Voto voto;
+    
 
     /**
      * @return the id
@@ -177,6 +180,20 @@ public class Receta {
      */
     public void setFechaBaja(Date fechaBaja) {
         this.fechaBaja = fechaBaja;
+    }
+
+    /**
+     * @return the voto
+     */
+    public Voto getVoto() {
+        return voto;
+    }
+
+    /**
+     * @param voto the voto to set
+     */
+    public void setVoto(Voto voto) {
+        this.voto = voto;
     }
     
     

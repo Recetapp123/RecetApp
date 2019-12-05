@@ -38,6 +38,16 @@ public class UsuarioServicio {
         usuario.setFoto(foto);
         usuarioRepositorio.save(usuario);
     }
+    
+    public void login (String mail, String clave) throws ErrorServicio{
+        validarLogin(mail, clave);
+        Usuario usuario = usuarioRepositorio.buscarPorMail(mail);
+        if (usuario.getMail()== mail && usuario.getClave() == clave) {
+            System.out.println("te logueaste gil");
+        }else{
+            throw new ErrorServicio ("Error o contraseña incorrectos");
+        }
+    }
 
     @Transactional
     public void modificarUsuario(String id, MultipartFile archivo, String nombre, String apellido, String mail, String clave) throws ErrorServicio {
@@ -53,34 +63,34 @@ public class UsuarioServicio {
             Foto foto = fotoServicio.guardar(archivo);
             usuario.setFoto(foto);
             usuarioRepositorio.save(usuario);
-        }else{
+        } else {
             throw new ErrorServicio("No se encuentra el usuario");
         }
     }
-    
+
     @Transactional
-    public void Inhabilitar (String id) throws ErrorServicio{
+    public void Inhabilitar(String id) throws ErrorServicio {
         Optional<Usuario> respuesta = usuarioRepositorio.findById(id);
         if (respuesta.isPresent()) {
             Usuario usuario = usuarioRepositorio.findById(id).get();
             usuario.setFechaBaja(new Date());
             usuarioRepositorio.save(usuario);
-        }else{
+        } else {
             throw new ErrorServicio("No se encuentra el usuario");
         }
     }
-    
+
     @Transactional
-    public void HabilitarUsuario (String id) throws ErrorServicio{
+    public void HabilitarUsuario(String id) throws ErrorServicio {
         Optional<Usuario> respuesta = usuarioRepositorio.findById(id);
         if (respuesta.isPresent()) {
             Usuario usuario = usuarioRepositorio.findById(id).get();
             if (usuario.getFechaBaja() == null) {
                 throw new ErrorServicio("El usuario ya está dado de alta");
-            }else{
+            } else {
                 usuario.setFechaBaja(null);
             }
-        }else{
+        } else {
             throw new ErrorServicio("No se encuentra el usuario");
         }
     }
@@ -102,6 +112,24 @@ public class UsuarioServicio {
         if (clave == null || clave.isEmpty() || clave.length() <= 6) {
             throw new ErrorServicio("La clave del usuario no puede ser nula y tiene que tener mas de 6 digitos.");
         }
+    }
+    
+    public void validarLogin (String mail, String clave) throws ErrorServicio{
+        if (mail.isEmpty() || mail == null) {
+            throw new ErrorServicio ("El mail no puede ser nulo");
+        }
+        if (clave.isEmpty() || clave == null) {
+            throw new ErrorServicio ("La clave no puede ser nula");
+        }
+        
+         Usuario usuario = usuarioRepositorio.buscarPorMail(mail);
+         if (!usuario.getMail().equals(mail)) {
+            throw new ErrorServicio("Mail incorrecto");
+        }
+         if (!usuario.getClave().equals(clave)) {
+            throw new ErrorServicio("Contraseña incorrecta");
+        }
+        
     }
 
 }
