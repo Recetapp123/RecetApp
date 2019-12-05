@@ -1,10 +1,15 @@
 
 package edu.egg.RecetApp.Entidades;
 
+import java.util.Date;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.GeneratedValue;
+import javax.persistence.OneToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
@@ -19,10 +24,15 @@ public class Usuario {
     private String apellido;
     private String clave;
     private String mail;
+    
+    @OneToOne
     private Foto foto;
+    
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date fechaBaja;
 
     @OneToMany
-    private Receta recetaentidad;
+    private List<Receta> recetaEntidad;
     /**
      * @return the id
      */
@@ -107,18 +117,34 @@ public class Usuario {
         this.foto = foto;
     }
 
+    
+
     /**
-     * @return the recetaentidad
+     * @return the fechaBaja
      */
-    public Receta getRecetaentidad() {
-        return recetaentidad;
+    public Date getFechaBaja() {
+        return fechaBaja;
     }
 
     /**
-     * @param recetaentidad the recetaentidad to set
+     * @param fechaBaja the fechaBaja to set
      */
-    public void setRecetaentidad(Receta recetaentidad) {
-        this.recetaentidad = recetaentidad;
+    public void setFechaBaja(Date fechaBaja) {
+        this.fechaBaja = fechaBaja;
+    }
+
+    /**
+     * @return the recetaEntidad
+     */
+    public List<Receta> getRecetaEntidad() {
+        return recetaEntidad;
+    }
+
+    /**
+     * @param recetaEntidad the recetaEntidad to set
+     */
+    public void setRecetaEntidad(List<Receta> recetaEntidad) {
+        this.recetaEntidad = recetaEntidad;
     }
 }
 

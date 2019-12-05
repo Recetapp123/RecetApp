@@ -3,6 +3,7 @@ package edu.egg.RecetApp.Entidades;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.GeneratedValue;
+import javax.persistence.OneToOne;
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
@@ -16,6 +17,7 @@ public class Ingrediente {
     private String nombre;
     private Integer ccal;
     
+    @OneToOne
     private Foto foto;
 
     /**
