@@ -2,10 +2,12 @@
 package edu.egg.RecetApp.Entidades;
 
 import java.util.Date;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.GeneratedValue;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -32,11 +34,11 @@ public class Receta {
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaBaja;
     
-    @OneToMany
-    private Ingrediente ingredienteentidad;
+    @ManyToMany
+    private List<Ingrediente> ingredienteentidad;
     
     @OneToMany
-    private Voto voto;
+    private List<Voto> voto;
     
 
     /**
@@ -153,20 +155,12 @@ public class Receta {
         this.foto = foto;
     }
 
-  
-    /**
-     * @return the ingredienteentidad
-     */
-    public Ingrediente getIngredienteentidad() {
+    public List<Ingrediente> getIngredienteentidad() {
         return ingredienteentidad;
     }
 
-    /**
-     * @param ingredienteentidad the ingredienteentidad to set
-     */
-    public void setIngredienteentidad(Ingrediente ingredienteentidad) {
-        this.ingredienteentidad = ingredienteentidad;
-    }
+ 
+   
 
     /**
      * @return the fechaBaja
@@ -182,18 +176,21 @@ public class Receta {
         this.fechaBaja = fechaBaja;
     }
 
-    /**
-     * @return the voto
-     */
-    public Voto getVoto() {
+    public List<Voto> getVoto() {
         return voto;
     }
 
-    /**
-     * @param voto the voto to set
-     */
-    public void setVoto(Voto voto) {
+    public void setVoto(List<Voto> voto) {
         this.voto = voto;
+    }
+
+    
+
+    /**
+     * @param ingredienteentidad the ingredienteentidad to set
+     */
+    public void setIngredienteentidad(List<Ingrediente> ingredienteentidad) {
+        this.ingredienteentidad = ingredienteentidad;
     }
     
     
