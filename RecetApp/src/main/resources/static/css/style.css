@@ -1,0 +1,39 @@
+header {
+    width: 100%;
+    height: auto;
+    background-color: #f17716;
+    position: relative;
+    float: left;
+}
+
+.ingresar {
+    width: 200;
+    height: 75%;
+    float: right;
+    background-color: #f17716;
+    font: 100% sans-serif;
+    font-size: 150%;
+}
+
+.ingresar ul {}
+
+.ingresar ul li {
+    list-style: none;
+    float: right;
+    margin-right: 50%;
+    margin-top: 7%;
+}
+
+.ingresar ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+.logo {
+    width: 200px;
+    height: 75%;
+    margin: 1%;
+    left: 2.5%;
+    position: relative;
+    float: left;
+}

@@ -19,20 +19,33 @@ public class UsuarioControlador {
     
     @GetMapping("/")
     public String register(){
-        return "register.html";
+        return "register";
     }
+    
+//    @PostMapping("/login")
+//    public String login(@RequestParam(required = false)String mail, @RequestParam (required = false) String clave){
+//        try{
+//            usuarioServicio.login(mail, clave);
+//            
+//        }catch (Exception ex){
+//            return "redirect:/usuario/register?id=" + mail + "&error=" + ex.getMessage();
+//        }
+//        return "redirect:/index/";
+//    }
 
-    @GetMapping("/register")
+    @PostMapping("/register")
     public String register(@RequestParam(required = false) String id, @RequestParam (required = false) MultipartFile archivo, @RequestParam (required = false) String nombre, @RequestParam (required = false) String apellido, @RequestParam String mail, @RequestParam (required = false) String clave) {
         try{
              usuarioServicio.registrar(archivo, nombre, apellido, mail, clave);
-             System.out.println(nombre+apellido+mail+clave);
+             
 //            usuarioServicio.registrar(null, "Fabri", "Perez", "elo@hotmail.com", "12345678899");
         } catch (Exception ex){
             return "redirect:/usuario/register?id=" + id + "&error=" + ex.getMessage();
         }
-        return "redirect:/pagina_principal";
+        return "redirect:/index/";
     }
+    
+    
 //    @PostMapping("/actualizar")
 //    public String actualizar(@RequestParam(required = false) String id, @RequestParam String nombre, @RequestParam String apellido, ModelMap modelo) {
 //

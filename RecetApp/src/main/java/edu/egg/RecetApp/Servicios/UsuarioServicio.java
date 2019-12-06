@@ -36,8 +36,8 @@ public class UsuarioServicio {
 //        Foto foto = fotoServicio.guardar(archivo);
 //       usuario.setFoto(foto);
 //        usuarioRepositorio.save(usuario);
-        String encriptada = new BCryptPasswordEncoder().encode(clave);
-        usuario.setClave(encriptada);
+//        String encriptada = new BCryptPasswordEncoder().encode(clave);
+//        usuario.setClave(encriptada);
         Foto foto = fotoServicio.guardar(archivo);
         usuario.setFoto(foto);
         usuarioRepositorio.save(usuario);
