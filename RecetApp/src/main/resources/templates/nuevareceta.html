@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Registrar</title>
+        <link rel="stylesheet" href="/css/Register1.css">
+        <link rel="stylesheet" href="/css/switchreceta.css">
+    </head>
+    <body>
+        <div class="register-box">
+            <img class="r1" src="img/Logo.jpeg" alt="">
+            <h1>Registrarse</h1>
+            <form action="nuevareceta" method="POST">
+
+
+
+                <label for="nombre">Nombre</label>
+                <input type="text"  name ="nombre">
+
+                <label for="ccal">Calorias</label>
+                <input type="number"  name="ccal">
+
+                <label for="mail">Tiempo</label>
+                <input type="text" name="tiempo">
+
+
+                <label class="switch">
+                    <input type="checkbox" name="celiaco">
+                    <span class="slider round"></span>
+                </label>
+                <label class="switch">
+                    <input type="checkbox" name="vegetariano">
+                    <span class="slider round"></span>
+                </label>
+                <label class="switch">
+                    <input type="checkbox" name="vegano">
+                    <span class="slider round"></span>
+                </label>
+                
+                <button type="submit">Registrar</button><p></p>
+            </form>
+        </div>
+    </body>
+</html>

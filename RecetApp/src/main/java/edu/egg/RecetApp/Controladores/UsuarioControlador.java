@@ -42,7 +42,7 @@ public class UsuarioControlador {
         } catch (Exception ex){
             return "redirect:/usuario/register?id=" + id + "&error=" + ex.getMessage();
         }
-        return "redirect:/index/";
+        return "redirect:/";
     }
     
     

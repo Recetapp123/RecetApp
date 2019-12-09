@@ -13,4 +13,6 @@ public interface RecetaRepositorio extends JpaRepository<Receta, String> {
     @Query("SELECT c FROM Receta c WHERE c.nombre = :nombre")
     public Receta buscarPorNombre(@Param("nombre") String nombre);
     
+
+    
 }
