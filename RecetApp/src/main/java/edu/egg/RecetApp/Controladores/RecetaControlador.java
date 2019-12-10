@@ -33,10 +33,10 @@ public class RecetaControlador {
     }
 
     @PostMapping("/nuevareceta")
-    public String nuevareceta(@RequestParam(required = false) MultipartFile archivo, @RequestParam(required = false) String nombre, @RequestParam(required = false) Integer ccal, @RequestParam String tiempo, @RequestParam(required = false) boolean vegetariano, @RequestParam(required = false) boolean vegano, @RequestParam(required = false) boolean celiaco, @RequestParam(required = false) List<Ingrediente>ingredienteEntidad) {
+    public String nuevareceta(@RequestParam(required = false) MultipartFile archivo, @RequestParam(required = false) String nombre, @RequestParam(required = false) Integer ccal, @RequestParam String tiempo, @RequestParam(required = false) boolean vegetariano, @RequestParam(required = false) boolean vegano, @RequestParam(required = false) boolean celiaco, @RequestParam(required = false) List<Ingrediente>ingredienteEntidad, @RequestParam(required = false)String descripcion, @RequestParam(required = false) String preparacion) {
         try {
             
-            recetaServicio.nuevaReceta(nombre, ccal, tiempo, archivo, vegetariano, vegano, celiaco,ingredienteEntidad);
+            recetaServicio.nuevaReceta(nombre, ccal, tiempo, archivo, vegetariano, vegano, celiaco, ingredienteEntidad, descripcion, preparacion);
 
         } catch (Exception ex) {
             return "redirect:/receta/nuevareceta?id=" + nombre + "&error=" + ex.getMessage();

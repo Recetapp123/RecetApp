@@ -22,7 +22,7 @@ public class RecetaServicio {
     FotoServicio fotoServicio;
 
     @Transactional
-    public void nuevaReceta(String nombre, Integer ccal, String tiempo, MultipartFile archivo, boolean vegetariano, boolean vegano, boolean celiaco, List<Ingrediente>ingredienteEntidad) throws ErrorServicio {
+    public void nuevaReceta(String nombre, Integer ccal, String tiempo, MultipartFile archivo, boolean vegetariano, boolean vegano, boolean celiaco, List<Ingrediente> ingredienteEntidad, String descripcion, String preparacion) throws ErrorServicio {
         validar(nombre, ccal, tiempo);
         Receta receta = new Receta();
         receta.setNombre(nombre);
@@ -34,11 +34,13 @@ public class RecetaServicio {
         Foto foto = fotoServicio.guardar(archivo);
         receta.setFoto(foto);
         receta.setIngredienteentidad(ingredienteEntidad);
+        receta.setDescripcion(descripcion);
+        receta.setPreparacion(preparacion);
         recetaRepositorio.save(receta);
     }
 
     @Transactional
-    public void modificarReceta(String id, String nombre, Integer ccal, String tiempo, MultipartFile archivo, boolean vegetariano, boolean vegano, boolean celiaco, List<Ingrediente>ingredienteEntidad) throws ErrorServicio {
+    public void modificarReceta(String id, String nombre, Integer ccal, String tiempo, MultipartFile archivo, boolean vegetariano, boolean vegano, boolean celiaco, List<Ingrediente> ingredienteEntidad) throws ErrorServicio {
         validar(nombre, ccal, tiempo);
         Optional<Receta> respuesta = recetaRepositorio.findById(id);
         if (respuesta.isPresent()) {
@@ -95,6 +97,15 @@ public class RecetaServicio {
         }
         if (tiempo == null || tiempo.isEmpty()) {
             throw new ErrorServicio("El tiempo de cocción no puede ser nulo.");
+        }
+    }
+
+    public void validarReceta(String descripcion, String preparacion) throws ErrorServicio {
+        if (descripcion == null || descripcion.isEmpty()) {
+            throw new ErrorServicio("La descripión no puede estar vacía");
+        }
+        if (preparacion == null || preparacion.isEmpty()) {
+            throw new ErrorServicio("Los pasos a seguir no pueden ser nulos");
         }
     }
 }
