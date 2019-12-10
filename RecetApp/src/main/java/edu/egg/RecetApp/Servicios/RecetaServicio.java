@@ -23,7 +23,7 @@ public class RecetaServicio {
 
     @Transactional
     public void nuevaReceta(String nombre, Integer ccal, String tiempo, MultipartFile archivo, boolean vegetariano, boolean vegano, boolean celiaco, List<Ingrediente> ingredienteEntidad, String descripcion, String preparacion) throws ErrorServicio {
-        validar(nombre, ccal, tiempo);
+        validar(nombre, ccal, tiempo, descripcion, preparacion);
         Receta receta = new Receta();
         receta.setNombre(nombre);
         receta.setTiempo(tiempo);
@@ -31,17 +31,17 @@ public class RecetaServicio {
         receta.setVegano(vegano);
         receta.setVegetariano(vegetariano);
         receta.setCeliaco(celiaco);
+        receta.setDescripcion(descripcion);
+        receta.setPreparacion(preparacion);
         Foto foto = fotoServicio.guardar(archivo);
         receta.setFoto(foto);
         receta.setIngredienteentidad(ingredienteEntidad);
-        receta.setDescripcion(descripcion);
-        receta.setPreparacion(preparacion);
         recetaRepositorio.save(receta);
     }
 
     @Transactional
-    public void modificarReceta(String id, String nombre, Integer ccal, String tiempo, MultipartFile archivo, boolean vegetariano, boolean vegano, boolean celiaco, List<Ingrediente> ingredienteEntidad) throws ErrorServicio {
-        validar(nombre, ccal, tiempo);
+    public void modificarReceta(String id, String nombre, Integer ccal, String tiempo, MultipartFile archivo, boolean vegetariano, boolean vegano, boolean celiaco, List<Ingrediente> ingredienteEntidad, String descripcion, String preparacion) throws ErrorServicio {
+        validar(nombre, ccal, tiempo, descripcion, preparacion);
         Optional<Receta> respuesta = recetaRepositorio.findById(id);
         if (respuesta.isPresent()) {
             Receta receta = recetaRepositorio.findById(id).get();
@@ -88,7 +88,7 @@ public class RecetaServicio {
         }
     }
 
-    public void validar(String nombre, Integer ccal, String tiempo) throws ErrorServicio {
+    public void validar(String nombre, Integer ccal, String tiempo, String descripcion, String preparacion) throws ErrorServicio {
         if (nombre == null || nombre.isEmpty()) {
             throw new ErrorServicio("El nombre de la receta no puede ser nulo.");
         }
@@ -98,9 +98,6 @@ public class RecetaServicio {
         if (tiempo == null || tiempo.isEmpty()) {
             throw new ErrorServicio("El tiempo de cocción no puede ser nulo.");
         }
-    }
-
-    public void validarReceta(String descripcion, String preparacion) throws ErrorServicio {
         if (descripcion == null || descripcion.isEmpty()) {
             throw new ErrorServicio("La descripión no puede estar vacía");
         }
