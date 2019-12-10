@@ -1,10 +1,12 @@
 package edu.egg.RecetApp.Servicios;
 
 import edu.egg.RecetApp.Entidades.Foto;
+import edu.egg.RecetApp.Entidades.Ingrediente;
 import edu.egg.RecetApp.Entidades.Receta;
 import edu.egg.RecetApp.Errores.ErrorServicio;
 import edu.egg.RecetApp.Repositorios.RecetaRepositorio;
 import java.util.Date;
+import java.util.List;
 import java.util.Optional;
 import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,21 +22,23 @@ public class RecetaServicio {
     FotoServicio fotoServicio;
 
     @Transactional
-    public void nuevaReceta(String nombre, Integer ccal, String tiempo, MultipartFile archivo, boolean vegetariano, boolean vegano, boolean celiaco) throws ErrorServicio {
+    public void nuevaReceta(String nombre, Integer ccal, String tiempo, MultipartFile archivo, boolean vegetariano, boolean vegano, boolean celiaco, List<Ingrediente>ingredienteEntidad) throws ErrorServicio {
         validar(nombre, ccal, tiempo);
         Receta receta = new Receta();
         receta.setNombre(nombre);
         receta.setTiempo(tiempo);
+        receta.setCcal(ccal);
         receta.setVegano(vegano);
         receta.setVegetariano(vegetariano);
         receta.setCeliaco(celiaco);
         Foto foto = fotoServicio.guardar(archivo);
         receta.setFoto(foto);
+        receta.setIngredienteentidad(ingredienteEntidad);
         recetaRepositorio.save(receta);
     }
 
     @Transactional
-    public void modificarReceta(String id, String nombre, Integer ccal, String tiempo, MultipartFile archivo, boolean vegetariano, boolean vegano, boolean celiaco) throws ErrorServicio {
+    public void modificarReceta(String id, String nombre, Integer ccal, String tiempo, MultipartFile archivo, boolean vegetariano, boolean vegano, boolean celiaco, List<Ingrediente>ingredienteEntidad) throws ErrorServicio {
         validar(nombre, ccal, tiempo);
         Optional<Receta> respuesta = recetaRepositorio.findById(id);
         if (respuesta.isPresent()) {
@@ -44,8 +48,10 @@ public class RecetaServicio {
             receta.setVegano(vegano);
             receta.setVegetariano(vegetariano);
             receta.setCeliaco(celiaco);
+            receta.setCcal(ccal);
             Foto foto = fotoServicio.guardar(archivo);
             receta.setFoto(foto);
+            receta.setIngredienteentidad(ingredienteEntidad);
             recetaRepositorio.save(receta);
         } else {
             throw new ErrorServicio("No se ha encontrado la receta");
