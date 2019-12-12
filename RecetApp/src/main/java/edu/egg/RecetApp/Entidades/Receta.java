@@ -27,6 +27,8 @@ public class Receta {
     private boolean vegetariano;
     private boolean vegano;
     private boolean celiaco;
+    private String descripcion;
+    private String preparacion;
     
     @OneToOne
     private Foto foto;
@@ -191,6 +193,34 @@ public class Receta {
      */
     public void setIngredienteentidad(List<Ingrediente> ingredienteentidad) {
         this.ingredienteentidad = ingredienteentidad;
+    }
+
+    /**
+     * @return the descripcion
+     */
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    /**
+     * @param descripcion the descripcion to set
+     */
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    /**
+     * @return the preparacion
+     */
+    public String getPreparacion() {
+        return preparacion;
+    }
+
+    /**
+     * @param preparacion the preparacion to set
+     */
+    public void setPreparacion(String preparacion) {
+        this.preparacion = preparacion;
     }
     
     

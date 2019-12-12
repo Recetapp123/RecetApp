@@ -5,7 +5,9 @@
  */
 package edu.egg.RecetApp.Controladores;
 
+import edu.egg.RecetApp.Entidades.Ingrediente;
 import edu.egg.RecetApp.Servicios.RecetaServicio;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -31,10 +33,15 @@ public class RecetaControlador {
     }
 
     @PostMapping("/nuevareceta")
-    public String nuevareceta(@RequestParam(required = false) MultipartFile archivo, @RequestParam(required = false) String nombre, @RequestParam(required = false) Integer ccal, @RequestParam String tiempo, @RequestParam(required = false) boolean vegetariano, @RequestParam(required = false) boolean vegano, @RequestParam(required = false) boolean celiaco) {
+    public String nuevareceta(@RequestParam(required = false) MultipartFile archivo, @RequestParam(required = false) String nombre, @RequestParam(required = false) Integer ccal, @RequestParam String tiempo, @RequestParam(required = false) boolean vegetariano, @RequestParam(required = false) boolean vegano, @RequestParam(required = false) boolean celiaco, @RequestParam(required = false) List<Ingrediente>ingredienteEntidad, @RequestParam(required = false)String descripcion, @RequestParam(required = false) String preparacion) {
         try {
             
-            recetaServicio.nuevaReceta(nombre, ccal, tiempo, archivo, vegetariano, vegano, celiaco);
+//<<<<<<< HEAD
+//            recetaServicio.nuevaReceta(nombre, ccal, tiempo, archivo, vegetariano, vegano, celiaco);
+//=======
+            recetaServicio.nuevaReceta(nombre, ccal, tiempo, archivo, vegetariano, vegano, celiaco, ingredienteEntidad, descripcion, preparacion);
+
+//>>>>>>> 3ef552fa6dae8b06715c061e7186d4c8807e33b1
         } catch (Exception ex) {
             return "redirect:/receta/nuevareceta?id=" + nombre + "&error=" + ex.getMessage();
         }
@@ -42,9 +49,9 @@ public class RecetaControlador {
     }
 
     @PostMapping("/modificarreceta")
-    public String modificarreceta(@RequestParam(required = false) String id, @RequestParam(required = false) MultipartFile archivo, @RequestParam(required = false) String nombre, @RequestParam(required = false) Integer ccal, @RequestParam(required = false) String tiempo, @RequestParam(required = false) boolean vegetariano, @RequestParam(required = false) boolean vegano, @RequestParam(required = false) boolean celiaco) {
+    public String modificarreceta(@RequestParam(required = false) String id, @RequestParam(required = false) MultipartFile archivo, @RequestParam(required = false) String nombre, @RequestParam(required = false) Integer ccal, @RequestParam(required = false) String tiempo, @RequestParam(required = false) boolean vegetariano, @RequestParam(required = false) boolean vegano, @RequestParam(required = false) boolean celiaco, @RequestParam(required = false) List<Ingrediente>ingredienteEntidad, @RequestParam(required = false) String descripcion, @RequestParam(required = false) String preparacion) {
         try {
-            recetaServicio.modificarReceta(id, nombre, ccal, tiempo, archivo, vegetariano, vegano, celiaco);
+            recetaServicio.modificarReceta(id, nombre, ccal, tiempo, archivo, vegetariano, vegano, celiaco, ingredienteEntidad, descripcion, preparacion);
         } catch (Exception e) {
             return "redirect:/receta/modificarreceta?id=" + id + "&error=" + e.getMessage();
         }
