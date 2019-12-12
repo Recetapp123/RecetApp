@@ -26,6 +26,7 @@ public class RecetaServicio {
         receta.setNombre(nombre);
         receta.setTiempo(tiempo);
         receta.setVegano(vegano);
+        receta.setCcal(ccal);
         receta.setVegetariano(vegetariano);
         receta.setCeliaco(celiaco);
         Foto foto = fotoServicio.guardar(archivo);
@@ -42,6 +43,7 @@ public class RecetaServicio {
             receta.setNombre(nombre);
             receta.setTiempo(tiempo);
             receta.setVegano(vegano);
+            receta.setCcal(ccal);
             receta.setVegetariano(vegetariano);
             receta.setCeliaco(celiaco);
             Foto foto = fotoServicio.guardar(archivo);

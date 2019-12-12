@@ -35,7 +35,6 @@ public class RecetaControlador {
         try {
             
             recetaServicio.nuevaReceta(nombre, ccal, tiempo, archivo, vegetariano, vegano, celiaco);
-
         } catch (Exception ex) {
             return "redirect:/receta/nuevareceta?id=" + nombre + "&error=" + ex.getMessage();
         }
