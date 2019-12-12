@@ -24,7 +24,6 @@ public class IngredienteServicio {
     public void nuevoIngrediente(String nombre, Integer ccal, MultipartFile archivo) throws ErrorServicio{
         validar(nombre, ccal);
         Ingrediente ingrediente = new Ingrediente();
-        ingrediente.setCcal(ccal);
         ingrediente.setNombre(nombre);
         Foto foto = fotoServicio.guardar(archivo);
         ingrediente.setFoto(foto);

@@ -10,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotEmpty;
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
@@ -19,10 +20,13 @@ public class Usuario {
     @GeneratedValue(generator="uuid")
     @GenericGenerator(name="uuid", strategy="uuid2")
     private String id;
-    
+//    @NotEmpty
     private String nombre;
+//    @NotEmpty
     private String apellido;
+//    @NotEmpty
     private String clave;
+//    @NotEmpty
     private String mail;
     
     @OneToOne

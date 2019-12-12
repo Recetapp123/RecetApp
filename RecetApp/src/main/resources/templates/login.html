@@ -1,28 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>iniciar sesion</title>
-    <link rel="stylesheet" href="CSS/LoginCSS.css">
+    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" href="/CSS/LoginCSS.css">
 </head>
 <body>
     <div class="login-box">
         <img class="avatar" src="img/R.jpg" alt="">
         <h1>iniciar sesion</h1>
-        <form action=""> 
-            <label for="nombre de usuario">Nombre de usuario</label>
-            <input type="text"  placeholder="Usuario">
+        <form action="/usuario/login" method ="GET"> 
+            <label for="Mail">Mail</label>
+            <input type="text"  placeholder="Ingrese su Mail" name ="MAIL">
 
             <label for="contraseña">Contraseña</label>
-            <input type="password"  placeholder="Ingrese su contraseña">
+            <input type="password"  placeholder="Ingrese su contraseña" name ="CLAVE">
             
             <input  type="submit" value="Iniciar sesíon">
             
 
             <a href="RecuperarCuente.html">Olvido su contraseña?</a><br>
-            <a href="Register.html">No tienes cuenta?</a>
+            <a href="/usuario/">No tienes cuenta?</a>
+            
+            
+            
         </form>
     </div>
 </body>

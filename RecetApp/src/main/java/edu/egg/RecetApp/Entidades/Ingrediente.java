@@ -15,7 +15,6 @@ public class Ingrediente {
     private String id;
     
     private String nombre;
-    private Integer ccal;
     
     @OneToOne
     private Foto foto;
@@ -49,20 +48,7 @@ public class Ingrediente {
         this.nombre = nombre;
     }
 
-    /**
-     * @return the ccal
-     */
-    public Integer getCcal() {
-        return ccal;
-    }
-
-    /**
-     * @param ccal the ccal to set
-     */
-    public void setCcal(Integer ccal) {
-        this.ccal = ccal;
-    }
-
+   
     /**
      * @return the foto
      */

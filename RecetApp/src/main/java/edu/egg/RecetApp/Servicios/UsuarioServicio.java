@@ -43,15 +43,15 @@ public class UsuarioServicio {
         usuarioRepositorio.save(usuario);
     }
     
-    public void login (String mail, String clave) throws ErrorServicio{
-        validarLogin(mail, clave);
-        Usuario usuario = usuarioRepositorio.buscarPorMail(mail);
-        if (usuario.getMail()== mail && usuario.getClave() == clave) {
-            System.out.println("te logueaste gil");
-        }else{
-            throw new ErrorServicio ("Error o contraseña incorrectos");
-        }
-    }
+//    public void login (String mail, String clave) throws ErrorServicio{
+//        validarLogin(mail, clave);
+//        Usuario usuario = usuarioRepositorio.buscarPorMail(mail);
+//        if (usuario.getMail()== mail && usuario.getClave() == clave) {
+//            System.out.println("te logueaste gil");
+//        }else{
+//            throw new ErrorServicio ("Error o contraseña incorrectos");
+//        }
+//    }
 
     @Transactional
     public void modificarUsuario(String id, MultipartFile archivo, String nombre, String apellido, String mail, String clave) throws ErrorServicio {
@@ -98,9 +98,11 @@ public class UsuarioServicio {
             throw new ErrorServicio("No se encuentra el usuario");
         }
     }
+    
+    
 
-    public List<Usuario> buscarUsuario(String q) {
-        return em.createQuery("SELECT c FROM Usuario c WHERE c.nombre LIKE :q OR c.apellido LIKE :q").setParameter("q", "%" + q + "%").getResultList();
+    public Usuario buscarUsuario(String MAIL, String CLAVE) {
+        return usuarioRepositorio.findByMailAndClave(MAIL, CLAVE);
     }
 
     public void validar(String nombre, String apellido, String mail, String clave) throws ErrorServicio {
