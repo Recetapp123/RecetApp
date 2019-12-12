@@ -33,12 +33,12 @@ public class UsuarioControlador {
         Usuario usuario;
         if (MAIL != null && CLAVE != null) {            
             usuario = usuarioServicio.buscarUsuario(MAIL, CLAVE);
-            modelo.put("MAIL", MAIL);
-            modelo.put("error", error);
+            modelo.put("usuario", usuario);
+           
             if(usuario==null){
                 return "login";
             }
-            return "redirect:/index/";
+            return "index";
          
         }
 //        try{
