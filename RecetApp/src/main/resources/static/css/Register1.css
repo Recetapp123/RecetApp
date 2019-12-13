@@ -9,7 +9,8 @@ body{
 }
 
 .register-box {
-	border-radius: 15%;
+        opacity:86%; 
+        border-radius: 15%;
 	width: 320px;
 	height: 550px;
 	background: #000;
@@ -76,7 +77,15 @@ body{
 	border-radius: 20px;
 	width: 250px;
 }
-
+.login-box input[type="submit"]:hover{
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;   
+    cursor: pointer;
+    background: #ffc107;
+    color: #000;
+}
 
 .register-box a{
 

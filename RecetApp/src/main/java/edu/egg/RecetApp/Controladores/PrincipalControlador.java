@@ -6,16 +6,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/index")
+@RequestMapping("/inicio")
 public class PrincipalControlador {
-    @GetMapping("/in")
-    public String iniciosin(){
-        return "nuevareceta";
+    @GetMapping("/")
+    public String iniciosion(){
+        return "indexNoLogueado";
     }
     
-    @GetMapping("/")
+    @GetMapping("/indexLogueado")
     public String inicio(Model model){
         model.addAttribute("usuario", null);
-        return "index";
+        return "indexLogueado";
     }
 }

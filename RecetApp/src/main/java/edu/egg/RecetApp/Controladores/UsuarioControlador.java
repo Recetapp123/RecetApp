@@ -38,7 +38,7 @@ public class UsuarioControlador {
             if(usuario==null){
                 return "login";
             }
-            return "index";
+            return "indexLogueado";
          
         }
 //        try{
@@ -50,7 +50,7 @@ public class UsuarioControlador {
         return "login";
     }
 
-    @PostMapping("/register")
+    @PostMapping("/registrar")
     public String register(@RequestParam(required = false) String id, @RequestParam(required = false) MultipartFile archivo, @RequestParam(required = false) String nombre, @RequestParam(required = false) String apellido, @RequestParam String mail, @RequestParam(required = false) String clave) {
         try {
             usuarioServicio.registrar(archivo, nombre, apellido, mail, clave);
@@ -59,7 +59,7 @@ public class UsuarioControlador {
         } catch (Exception ex) {
             return "redirect:/usuario/register?id=" + id + "&error=" + ex.getMessage();
         }
-        return "redirect:/index/in";
+        return "redirect:/usuario/login";
     }
 
 //    @PostMapping("/actualizar")
