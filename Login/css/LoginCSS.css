@@ -84,6 +84,12 @@ body{
 
 
 .login-box a{
+	top: 50%;
+	left: 50%;
+	position: border-bottom;
+	border: none;
+	outline: none;
+	text-align: center;
 	text-decoration: none;
 	font-size: 13px;
 	line-height: 30px;

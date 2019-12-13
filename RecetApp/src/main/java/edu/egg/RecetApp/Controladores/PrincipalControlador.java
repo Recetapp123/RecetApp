@@ -8,6 +8,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/index")
 public class PrincipalControlador {
+    @GetMapping("/in")
+    public String iniciosin(){
+        return "nuevareceta";
+    }
+    
     @GetMapping("/")
     public String inicio(Model model){
         model.addAttribute("usuario", null);
