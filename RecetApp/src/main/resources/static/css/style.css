@@ -1,39 +1,144 @@
-header {
-    width: 100%;
-    height: auto;
-    background-color: #f17716;
-    position: relative;
-    float: left;
-}
-
-.ingresar {
-    width: 200;
-    height: 75%;
-    float: right;
-    background-color: #f17716;
-    font: 100% sans-serif;
-    font-size: 150%;
-}
-
-.ingresar ul {}
-
-.ingresar ul li {
-    list-style: none;
-    float: right;
-    margin-right: 50%;
-    margin-top: 7%;
-}
-
-.ingresar ul li a {
-    text-decoration: none;
-    color: white;
-}
-
-.logo {
-    width: 200px;
-    height: 75%;
-    margin: 1%;
-    left: 2.5%;
-    position: relative;
-    float: left;
-}
+    body {
+        background: URL(../img/Fondo.jpeg) no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        margin: 0 auto;
+        padding: 0;
+        width: 100%;
+    }
+    
+    nav {
+        width: 100%;
+        height: auto;
+        background-color: #74665a;
+        position: relative;
+        float: left;
+    }
+    
+    ul {
+        list-style: none;
+    }
+    
+    nav ul li {
+        font-size: 150%;
+        display: inline-block;
+        float: center;
+        padding: 10px;
+    }
+    
+    header {
+        width: 100%;
+        height: auto;
+        background-color: #f17716;
+        position: relative;
+        float: left;
+    }
+    
+    header ul li {
+        margin-top: 20px;
+        margin-right: 40px;
+        float: right;
+        display: inline;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+    header ul li a {
+        text-decoration: none;
+    }
+    
+    header ul li a img {
+        width: 100px;
+        height: auto;
+    }
+    
+    .logo {
+        width: 200px;
+        height: 75%;
+        margin: 1%;
+        position: relative;
+        display: block;
+        float: left;
+    }
+    
+    .f1 {
+        width: 100%;
+        height: auto;
+        position: relative;
+        display: block;
+        float: left;
+    }
+    
+    .buscador {
+        width: 50px;
+        height: auto;
+    }
+    
+    .searchform {
+        display: inline-block;
+        zoom: 1;
+        *display: inline;
+        padding: 3px 5px;
+        border-radius: 2em;
+        background: #fbfbf9;
+        float: left;
+    }
+    
+    .searchform input {
+        font: normal 12px/100% sans-serif;
+        display: inline-block;
+        zoom: 1;
+        *display: inline;
+        border: solid 2px #fbfbf9;
+        padding: 3px 5px;
+        border-radius: 2em;
+        background: #fbfbf9;
+        opacity: 0.7;
+    }
+    
+    .searchform button {
+        display: inline-block;
+        zoom: 1;
+        *display: inline;
+        border: solid 2px #f17716;
+        padding: 3px 5px;
+        border-radius: 2em;
+        background: #f17716;
+    }
+    
+    .searchform2 {
+        display: inline-block;
+        zoom: 3;
+        *display: inline;
+        border: none;
+        padding: 3px 5px;
+        border-radius: 2em;
+        background: #fbfbf9;
+        position: relative;
+        left: 19%;
+        top: 70px;
+        background-color: rgba(0, 0, 0, .7);
+    }
+    
+    .searchform2 input {
+        font: normal 15px/90% sans-serif;
+        color: white;
+        display: inline-block;
+        zoom: 1;
+        *display: inline;
+        border: none;
+        padding: 2% 5px 5px;
+        border-radius: 2em;
+        background: none;
+        opacity: 0.5;
+    }
+    
+    .searchform2 button {
+        display: inline-block;
+        zoom: 1;
+        *display: inline;
+        border: none;
+        padding: 2px 5px;
+        border-radius: 2em;
+        background: #f17716;
+    }

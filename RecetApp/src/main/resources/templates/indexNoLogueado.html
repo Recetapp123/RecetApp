@@ -1,31 +1,74 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Recetapp</title>
-        <link rel="stylesheet" href="/css/style.css" type="text/css"> </link>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Recetapp</title>
+    <link rel="stylesheet" href="/css/style.css" type="text/css"> </link>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+</head>
+
+<body>
+
+
+    <header>
+        <div id="logo">
+            <img alt="" class="logo" src="/img/logoCompleto.png">
+            </img>
+        </div>
 
 
 
-    <body>
-        <header>
-            <div id="logo">
-                <img alt="" class="logo" src="img/logoCompleto.png"/>
 
-            </div>
-            <nav class="ingresar">
-                <ul>
-                    <li>
-                        <a href="/usuario/">ingresar</a>
-                    </li>
-                </ul>
-           
-            </nav>
-        </header>
+
+        <div id="navegacion">
+            <ul>
+                <li>
+                    <a href="/usuario/login" class="current">
+                        <img src="/img/Ingresar.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="/receta/">
+                        <img src="/img/Recetas.png" alt="">
+                    </a>
+                </li>
+                <li>
+
+                    <section class="searchform">
+                        <form action="" method="">
+                            <input type="search" placeholder="Recetas, ingredientes...">
+                            <button><img class="buscador" src="/img/Buscar.png" alt=""></button>
+                        </form>
+                    </section>
+
+                </li>
+
+            </ul>
+        </div>
+
+    </header>
+
+    <nav>
+
+    </nav>
+
+    <body class="f1">
+
+
+
+        <section class="searchform2">
+            <form action="" method="">
+                <input type="search" placeholder="¿Qué ingredientes tenés?">
+                <button><img class="buscador" src="/img/Buscar.png" alt=""></button>
+            </form>
+        </section>
+
+
     </body>
 
 </html>

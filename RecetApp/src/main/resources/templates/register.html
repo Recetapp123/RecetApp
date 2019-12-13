@@ -2,7 +2,11 @@
 <html lang="es">
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Registrar</title>
+        
+        <link rel="stylesheet" href="/CSS/LoginCSS.css">
         <link rel="stylesheet" href="/css/Register1.css">
     </head>
     <body>
@@ -11,7 +15,7 @@
             <h1>Registrarse</h1>
             <form action="registrar" method="POST">
 
-                
+
 
                 <label for="nombre">Nombre</label>
                 <input type="text"  name ="nombre">
@@ -19,16 +23,16 @@
                 <label for="apellido">Apellido</label>
                 <input type="text"  name="apellido">
 
-                <label for="mail">Email</label>
-                <input type="text" name="mail">
+                <label for="mail">Correo Electrónico</label>
+                <input type="email" name="mail">
 
 
                 <label for="clave">Contraseña</label>
                 <input type="password"  name="clave">
 
 
-                <button type="submit">Registrar</button><p></p>
-                <a >Tengo cuenta</a>
+                <input type="submit" value="Registrarme">
+                <a href="/usuario/login">Ya tengo una cuenta</a>
 
             </form>
         </div>

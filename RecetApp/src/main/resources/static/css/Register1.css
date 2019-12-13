@@ -54,7 +54,7 @@ body{
 
 }
 
-
+.register-box input[type="email"],
 .register-box input[type="text"],
 .register-box input[type="password"]{
 	border: none;
@@ -67,7 +67,7 @@ body{
 }
 
 
-.register-box button[type="submit"]{
+.register-box input[type="submit"]{
 	border: none;
 	outline: none;
 	height: 40px;
@@ -77,7 +77,7 @@ body{
 	border-radius: 20px;
 	width: 250px;
 }
-.login-box input[type="submit"]:hover{
+.register-box input[type="submit"]:hover{
     -webkit-transition: all 0.4s;
     -o-transition: all 0.4s;
     -moz-transition: all 0.4s;

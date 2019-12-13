@@ -7,33 +7,76 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Recetapp</title>
         <link rel="stylesheet" href="/css/style.css" type="text/css"> </link>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
     </head>
 
-
-
     <body>
+
+
         <header>
             <div id="logo">
-                <img alt="" class="logo" src="img/logoCompleto.png"/>
-
+                <img alt="" class="logo" src="/img/logoCompleto.png">
+                </img>
             </div>
-            <nav class="ingresar">
-                <table>
-                    <thead><tr>
-                    <th>NOMBRE</th>
-                    <th>MAIL</th>
-                    <th>CLAVE</th></tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td th:text="${usuario.nombre} + ' ' + ${usuario.apellido}"></td> 
-                            <td th:text="${usuario.mail}"></td> 
-                            <td th:text="${usuario.clave}"></td> 
-                        </tr>
-                    </tbody>
-                </table>
-            </nav>
+
+
+
+
+
+            <div id="navegacion">
+                <ul>
+                    <li>
+                        <a href="index.html" class="current">
+                            <table>
+                                <thead><tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td th:text="${usuario.nombre} + ' ' + ${usuario.apellido}"></td> 
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/receta/">
+                            <img src="/img/Recetas.png" alt="">
+                        </a>
+                    </li>
+                    <li>
+
+                        <section class="searchform">
+                            <form action="" method="">
+                                <input type="search" placeholder="Recetas, ingredientes...">
+                                <button><img class="buscador" src="/img/Buscar.png" alt=""></button>
+                            </form>
+                        </section>
+
+                    </li>
+
+                </ul>
+            </div>
+
         </header>
+
+        <nav>
+
+        </nav>
+
+    <body class="f1">
+
+
+
+        <section class="searchform2">
+            <form action="" method="">
+                <input type="search" placeholder="¿Qué ingredientes tenés?">
+                <button><img class="buscador" src="/img/Buscar.png" alt=""></button>
+            </form>
+        </section>
+
+
     </body>
 
 </html>
