@@ -19,15 +19,16 @@ class FotoServicio {
     @Transactional
     public Foto guardar(MultipartFile archivo) throws ErrorServicio {
         if (archivo != null) {
+            System.out.println("entre al if :)");
             try {
                 Foto foto = new Foto();
-                foto.setNombre(archivo.getName());
                 foto.setContenido(archivo.getBytes());
                 return fotoRepositorio.save(foto);
             } catch (Exception e) {
                 System.err.println(e.getMessage());
             }
         }
+        System.out.println("hola");
         return null;
     }
     @Transactional
@@ -42,7 +43,6 @@ class FotoServicio {
                     }
                 }
                 
-                foto.setNombre(archivo.getName());
                 foto.setContenido(archivo.getBytes());
                 
                 return fotoRepositorio.save(foto);

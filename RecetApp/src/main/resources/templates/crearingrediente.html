@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Crear ingrediente</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <form enctype="multipart/form-data" action="/receta/crear" method ="POST"> 
+            <label for="Mail">Nombre:</label>
+            <input type="text"  placeholder="" name ="nombre">
+
+            <label for="imagen">Imagen</label>
+            <input type="file"  name ="archivo">
+            
+            <input  type="submit" value="Enviar">
+            
+        </form>
+        </div>
+    </body>
+</html>

@@ -21,20 +21,17 @@ public class IngredienteServicio {
     private FotoServicio fotoServicio;
     
     @Transactional
-    public void nuevoIngrediente(String nombre, Integer ccal, MultipartFile archivo) throws ErrorServicio{
-        validar(nombre, ccal);
+    public void nuevoIngrediente(String nombre, MultipartFile archivo) throws ErrorServicio{
+        validar(nombre);
         Ingrediente ingrediente = new Ingrediente();
         ingrediente.setNombre(nombre);
         Foto foto = fotoServicio.guardar(archivo);
         ingrediente.setFoto(foto);
         ingredienteRepositorio.save(ingrediente);
     }
-    public void validar(String nombre, Integer ccal) throws ErrorServicio {
+    public void validar(String nombre) throws ErrorServicio {
         if (nombre == null || nombre.isEmpty()) {
             throw new ErrorServicio("El nombre del ingrediente no puede ser nulo.");
-        }
-        if (ccal == null){
-            throw new ErrorServicio("Las calorias del ingrediente no pueden ser nulas ser nulo.");
         }
         
     }

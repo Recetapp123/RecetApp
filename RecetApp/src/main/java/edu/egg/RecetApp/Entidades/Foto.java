@@ -15,9 +15,6 @@ public class Foto {
     @GeneratedValue(generator="uuid")
     @GenericGenerator(name="uuid", strategy="uuid2")
     private String id;
-    
-    private String nombre;
-    
     @Lob @Basic(fetch = FetchType.LAZY)
     private byte[] contenido;
 
@@ -35,20 +32,7 @@ public class Foto {
         this.id = id;
     }
 
-    /**
-     * @return the nombre
-     */
-    public String getNombre() {
-        return nombre;
-    }
-
-    /**
-     * @param nombre the nombre to set
-     */
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
+   
     /**
      * @return the contenido
      */
