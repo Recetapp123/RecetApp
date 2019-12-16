@@ -119,6 +119,21 @@
         top: 70px;
         background-color: rgba(0, 0, 0, .7);
     }
+    .table {
+        display: inline-block;
+        zoom: 2;
+        *display: inline;
+        border: none;
+        padding: 3px 5px;
+        border-radius: 2em;
+        background: #fbfbf9;
+        position: relative;
+        left: 19%;
+        top: 90px;
+        background-color: rgba(0, 0, 0, .7);
+        font: normal 15px/90% sans-serif;
+        color: white;
+    }
     
     .searchform2 input {
         font: normal 15px/90% sans-serif;

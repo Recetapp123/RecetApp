@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 
     <head>
         <meta charset="UTF-8">
@@ -64,13 +64,27 @@
 
 
         <section class="searchform2">
-            <form action="" method="">
-                <input type="search" placeholder="¿Qué ingredientes tenés?">
+            <form action="/inicio/buscar" method="GET">
+                <input type="search" placeholder="¿Qué ingredientes tenés?" name="q" th:value="${q}">
                 <button><img class="buscador" src="/img/Buscar.png" alt=""></button>
             </form>
         </section>
+        <table class="table">
+            <thead class="thead-light">
+                <tr>
+                </tr>
 
 
-    </body>
+            </thead>
+            <tbody>
+                <tr th:each="ingrediente : ${ingredientes}">
+                    <td><img th:src="@{/inicio/image/}+${ingrediente.id}" style="max-width: 10%;max-height: 10%;"/></td>
+                    <td th:text="${ingrediente.nombre}"></td>
+                    
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</body>
 
 </html>
