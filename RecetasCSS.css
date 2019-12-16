@@ -1,0 +1,276 @@
+
+header {
+    opacity: 100%;
+    width: 100%;
+    height: auto;
+    background-color: #f17716;
+    position: relative;
+    float: left;
+}
+.Atras {
+    width: 200;
+    height: 75%;
+    float: right;
+    background-color: #f17716;
+    font: 100% sans-serif;
+    font-size: 150%;
+}
+
+
+
+.Atras ul li {
+    list-style: none;
+    float: right;
+    margin-right: 50%;
+    margin-top: 7%;
+    }
+
+.Atras ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+.Atras ul li a:hover{
+    color: black;
+}
+
+
+
+.logo {
+    width: 150px;
+    height: 75%;
+    margin: 1%;
+    left: 3%;
+    position: relative ;
+    float: left;
+}
+
+
+/*--------------------------------------------------------------------*/
+body{
+    margin: 0;
+    padding: 0;
+    background: url(../img/Fondo1.jpg) ;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover; 
+    font-family: sans-serif;
+    height: 100vh;
+    
+}
+
+.foto{
+    border-radius: 50%;
+    height: 250px;
+    width: 250px;
+    position: relative;
+    top: 20px;
+}
+
+
+.Datos1{
+   
+  border-radius: 15%;
+      width: 415px;
+      height: 400px;
+  
+      top: 550px;
+      left: 200px;
+      position: absolute;
+      transform: translate(-50%, -50%);
+      box-sizing: border-box;
+      padding: 70px 30px;
+      
+}
+
+
+.Datos1 p{
+
+position: relative;
+top: -50px;
+    color: white;
+}
+
+
+.Datos1 input{
+    position: relative;
+    top: -60px;
+}
+.Datos1   input[type="text"]{
+    border: none;
+    border-bottom: 1px solid #fff;
+	background: transparent;
+	outline: none;
+	height: 35px;
+	color: #fff;
+	font-size: 18px;
+}
+
+
+.Ingredientes{
+   
+      width: 310px;
+      height: 504px;
+    background:url(../img/ingredientes.jpg);
+      top: 350px;
+      left: 1180px;
+      position: absolute;
+      transform: translate(-50%, -50%);
+      box-sizing: border-box;
+      padding: 70px 30px;
+}
+
+.Ingredientes p {
+    position: relative;
+    top: -60px;
+    color: white;
+}
+
+.Ingredientes input {
+    position: relative;
+    top: -60px;
+
+}
+
+
+
+.Preparacion{
+    border-radius: 15%;
+    width: 750px;
+    height: 650px;
+background: white;
+    top: 423px;
+    left: 637px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+    
+}
+
+
+.Preparacion b{
+    position: relative;
+    top: -50px;
+    left: 500px;
+    color:  black;
+    
+}
+
+
+.Preparacion h2{
+color: black;
+position: relative;
+left:  0px;
+top: -50px;
+}
+
+.Preparacion textarea{
+    height: 480px;
+    width:680px;
+    border: none;
+    font-size: 15px;
+   background-color: rgba(0, 0, 0, .0);
+    position: relative;
+    top: -50px;
+outline: none;
+}
+
+
+
+
+
+
+
+
+.Datos1 .container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 18px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  top: -30px;
+  left: 0px;
+  color: white;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+
+
+.Crear input[type="submit"]{
+	border: none;
+	outline: none;
+    height: 50px;
+    width: 250px;
+	background: #b80f22;
+	color: #fff;
+	font-size: 18px;
+	border-radius: 20px; 
+    position: relative;
+    top: 300px;
+    left: 1050px;
+}
+
+
+.Crear input:hover{
+    color:black;
+}
