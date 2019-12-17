@@ -1,6 +1,7 @@
 package edu.egg.RecetApp.Controladores;
 
 import edu.egg.RecetApp.Entidades.Ingrediente;
+import edu.egg.RecetApp.Entidades.Usuario;
 import edu.egg.RecetApp.Servicios.IngredienteServicio;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,12 +23,12 @@ public class PrincipalControlador {
 
     @Autowired
     private IngredienteServicio ingredienteServicio;
-    
+
     @GetMapping("/")
     public String iniciosion() {
         return "indexNoLogueado";
     }
-    
+
     @GetMapping("/prueba")
     public String prueba() {
         return "index";
@@ -44,30 +45,33 @@ public class PrincipalControlador {
         List<Ingrediente> ingredientes;
         if (q != null) {
             ingredientes = ingredienteServicio.buscarIngredientes(q);
-        }else{
+        } else {
             ingredientes = ingredienteServicio.buscarIngredientes();
         }
-        modelo.put("q",q);
+        modelo.put("q", q);
         modelo.put("ingredientes", ingredientes);
-        modelo.put("error",error);
+        modelo.put("error", error);
         return "indexNoLogueado";
     }
-    
+
     @GetMapping("/buscarLogueado")
-    public String buscadorLogueado(@RequestParam(required = false) String q, @RequestParam(required = false) String error, ModelMap modelo) {
+    public String buscadorLogueado(@RequestParam(required = false) String q, @RequestParam(required = false) String error, Model model) {
         List<Ingrediente> ingredientes;
+        Usuario usuario;
+        UsuarioControlador usuarioControlador;
+
         if (q != null) {
             ingredientes = ingredienteServicio.buscarIngredientes(q);
-        }else{
+        } else {
             ingredientes = ingredienteServicio.buscarIngredientes();
         }
-        modelo.put("q",q);
-        modelo.put("ingredientes", ingredientes);
-        modelo.put("error",error);
-        modelo.addAttribute("usuario", null);
+//        modelo.put("q",q);
+//        modelo.put("ingredientes", ingredientes);
+//        modelo.put("error",error);
+        model.addAttribute("usuario", null);
         return "indexLogueado";
     }
-    
+
     @GetMapping(value = "/image/{id}")
     public ResponseEntity<byte[]> getImage(@PathVariable(value = "id") String id) {
 
