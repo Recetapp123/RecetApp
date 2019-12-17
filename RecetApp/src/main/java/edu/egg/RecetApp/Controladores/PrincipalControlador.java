@@ -39,7 +39,7 @@ public class PrincipalControlador {
         return "indexLogueado";
     }
 
-    @GetMapping("/buscar")
+    @GetMapping("/buscarNoLogueado")
     public String buscador(@RequestParam(required = false) String q, @RequestParam(required = false) String error, ModelMap modelo) {
         List<Ingrediente> ingredientes;
         if (q != null) {
@@ -52,6 +52,22 @@ public class PrincipalControlador {
         modelo.put("error",error);
         return "indexNoLogueado";
     }
+    
+    @GetMapping("/buscarLogueado")
+    public String buscadorLogueado(@RequestParam(required = false) String q, @RequestParam(required = false) String error, ModelMap modelo) {
+        List<Ingrediente> ingredientes;
+        if (q != null) {
+            ingredientes = ingredienteServicio.buscarIngredientes(q);
+        }else{
+            ingredientes = ingredienteServicio.buscarIngredientes();
+        }
+        modelo.put("q",q);
+        modelo.put("ingredientes", ingredientes);
+        modelo.put("error",error);
+        modelo.addAttribute("usuario", null);
+        return "indexLogueado";
+    }
+    
     @GetMapping(value = "/image/{id}")
     public ResponseEntity<byte[]> getImage(@PathVariable(value = "id") String id) {
 

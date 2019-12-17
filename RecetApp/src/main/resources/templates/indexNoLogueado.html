@@ -1,67 +1,67 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Recetapp</title>
-    <link rel="stylesheet" href="/css/style.css" type="text/css"> </link>
-    <link rel="icon" href="/img/logoCirc.png" type="image/png">
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/css/full-slider.css" rel="stylesheet">
-    <link href="/css/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="/css/Pagina_PrincipalCSS.css" type="text/css"> </link>
-    <link rel="stylesheet" href="/js/estilo.js">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Recetapp</title>
+        <link rel="stylesheet" href="/css/style.css" type="text/css"> </link>
+        <link rel="icon" href="/img/logoCirc.png" type="image/png">
+        <link href="/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/css/full-slider.css" rel="stylesheet">
+        <link href="/css/style.css" rel="stylesheet">
+        <link rel="stylesheet" href="/css/Pagina_PrincipalCSS.css" type="text/css"> </link>
+        <link rel="stylesheet" href="/js/estilo.js">
 
-</head>
+    </head>
 
-<body>
+    <body>
 
 
-    <header>
-        <div id="logo">
-            <img alt="" class="logo" src="/img/logoCompleto.png">
-            </img>
-        </div>
+        <header>
+            <div id="logo">
+                <img alt="" class="logo" src="/img/logoCompleto.png">
+                </img>
+            </div>
 
-        <div id="navegacion">
-            <ul>
-                <li>
-                    <a href="index.html" class="current">
-                        <img src="/img/Ingresar.png" alt="">
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                        <img src="/img/Recetas.png" alt="">
-                    </a>
-                </li>
-                <li>
+            <div id="navegacion">
+                <ul>
+                    <li>
+                        <a href="/usuario/login" class="current">
+                            <img src="/img/Ingresar.png" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/receta/">
+                            <img src="/img/Recetas.png" alt="">
+                        </a>
+                    </li>
+                    <li>
 
-                    <section class="searchform">
-                        <form action="" method="">
-                            <input type="search" placeholder="Recetas, ingredientes...">
-                            <button><img class="buscador" src="/img/lupa.png" alt=""></button>
-                        </form>
-                    </section>
+                        <section class="searchform">
+                            <form action="" method="">
+                                <input type="search" placeholder="Recetas, ingredientes...">
+                                <button><img class="buscador" src="/img/lupa.png" alt=""></button>
+                            </form>
+                        </section>
 
-                </li>
+                    </li>
 
-            </ul>
-        </div>
+                </ul>
+            </div>
 
-    </header>
+        </header>
 
-    <nav>
+        <nav>
 
-    </nav>
+        </nav>
 
     <body class="f1">
 
         <section class="FBusc">
             <section class="searchform2">
-                <form action="/inicio/buscar" method="GET">
+                <form action="/inicio/buscarNoLogueado" method="GET">
                     <input type="search" placeholder="¿Qué ingredientes tenés?" name="q" th:value="${q}">
                     <button><img class="buscador2" src="/img/Buscar.png" alt=""></button>
                 </form>
@@ -78,7 +78,7 @@
                 <tr th:each="ingrediente : ${ingredientes}">
                     <td><img th:src="@{/inicio/image/}+${ingrediente.id}" style="max-width: 10%;max-height: 10%;"/></td>
                     <td th:text="${ingrediente.nombre}"></td>
-                    
+
                 </tr>
             </tbody>
         </table>

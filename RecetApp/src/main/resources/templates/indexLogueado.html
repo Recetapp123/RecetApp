@@ -6,11 +6,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Recetapp</title>
+        <link rel="stylesheet" href="/css/style.css" type="text/css"> </link>
         <link rel="icon" href="/img/logoCirc.png" type="image/png">
-        <link rel="stylesheet" href="/css/style.css" type="text/css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+        <link href="/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/css/full-slider.css" rel="stylesheet">
+        <link href="/css/style.css" rel="stylesheet">
+        <link rel="stylesheet" href="/css/Pagina_PrincipalCSS.css" type="text/css"> </link>
+        <link rel="stylesheet" href="/js/estilo.js">
+
     </head>
 
     <body>
@@ -21,10 +24,6 @@
                 <img alt="" class="logo" src="/img/logoCompleto.png">
                 </img>
             </div>
-
-
-
-
 
             <div id="navegacion">
                 <ul>
@@ -42,24 +41,22 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/receta/">
+                        <a href="">
                             <img src="/img/Recetas.png" alt="">
                         </a>
                     </li>
                     <li>
 
                         <section class="searchform">
-                            <form action="/inicio/buscar" method="GET">
+                            <form action="" method="">
                                 <input type="search" placeholder="Recetas, ingredientes...">
-                                <button><img class="buscador" src="/img/Buscar.png" alt=""></button>
+                                <button><img class="buscador" src="/img/lupa.png" alt=""></button>
                             </form>
                         </section>
 
                     </li>
 
-
                 </ul>
-
             </div>
 
         </header>
@@ -70,29 +67,134 @@
 
     <body class="f1">
 
-
-
-        <section class="searchform2">
-            <form action="/inicio/buscar" method="GET">
-                <input type="search" placeholder="¿Qué ingredientes tenés?" name="q" th:value="${q}">
-                <button><img class="buscador" src="/img/Buscar.png" alt=""></button>
-            </form>
-
-            <table class="table">
-                <thead class="thead-light">
-                    <tr>
-                        <th>Foto</th>
-                        <th>Nombre</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr th:each="ingrediente : ${ingredientes}">
-                        <td th:text="${ingrediente.nombre}"></td>
-
-                    </tr>
-                </tbody>
-            </table>
+        <section class="FBusc">
+            <section class="searchform2">
+                <form action="/inicio/buscarLogueado" method="GET">
+                    <input type="search" placeholder="¿Qué ingredientes tenés?" name="q" th:value="${q}">
+                    <button><img class="buscador2" src="/img/Buscar.png" alt=""></button>
+                </form>
+            </section>
         </section>
+        <table class="table">
+            <thead class="thead-light">
+                <tr>
+                </tr>
+
+
+            </thead>
+            <tbody>
+                <tr th:each="ingrediente : ${ingredientes}">
+                    <td><img th:src="@{/inicio/image/}+${ingrediente.id}" style="max-width: 10%;max-height: 10%;"/></td>
+                    <td th:text="${ingrediente.nombre}"></td>
+
+                </tr>
+            </tbody>
+        </table>
+
+
+        <section class="FSlid">
+
+            <section class="py-5">
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner" role="listbox">
+
+                        <div class="carousel-item active" style="background-image: url('/img/imagen1.jpg')">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h3>First Slide</h3>
+                                <p>This is a description for the first slide.</p>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item" style="background-image: url('/img/imagen2.jpg')">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h3>Second Slide</h3>
+                                <p>This is a description for the second slide.</p>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item" style="background-image: url('/img/imagen3.jpg')">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h3>Third Slide</h3>
+                                <p>This is a description for the third slide.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </section>
+        </section>
+
+        <section class="FFoot">
+            <footer>
+                <div class="container-footer-all">
+
+                    <div class="container-body">
+
+                        <div class="colum1">
+                            <h1>Mas informacion</h1>
+
+                            <p>
+                                [No hay contenido]
+                            </p>
+
+                        </div>
+
+                        <div class="colum2">
+
+                            <h1>Redes Sociales</h1>
+
+                            <div class="row">
+                                <img src="/img/facebook.png">
+                                <label>Siguenos en Facebook</label>
+                            </div>
+                            <div class="row">
+                                <img src="/img/twitter.png">
+                                <label>Siguenos en Twitter</label>
+                            </div>
+                            <div class="row">
+                                <img src="/img/instagram.png">
+                                <label>Siguenos en Instagram</label>
+                            </div>
+                        </div>
+
+                        <div class="colum3">
+
+                            <h1>Informacion Contactos</h1>
+
+                            <div class="row2">
+                                <img src="/img/telefono.png">
+                                <label>12394454595</label>
+                            </div>
+
+                            <div class="row2">
+                                <img src="/img/email.png">
+                                <label>perroloko@gmail.com</label>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </footer>
+        </section>
+
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
     </body>
 
