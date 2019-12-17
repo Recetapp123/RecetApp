@@ -1,10 +1,26 @@
     body {
-        background: URL(../img/Fondo.jpeg) no-repeat;
-        background-size: cover;
         font-family: sans-serif;
         margin: 0 auto;
         padding: 0;
         width: 100%;
+    }
+    
+    .FBusc {
+        background: URL(../img/Fondo.jpeg) no-repeat;
+        background-size: cover;
+        height: 625px;
+    }
+    
+    .FSlid {
+        background-color: #f17716;
+        background-size: cover;
+        height: 415px;
+    }
+    
+    .FFoot {
+        background-color: #1E1E1E;
+        background-size: cover;
+        height: 200px;
     }
     
     nav {
@@ -70,7 +86,12 @@
     }
     
     .buscador {
-        width: 50px;
+        width: 10px;
+        height: auto;
+    }
+    
+    .buscador2 {
+        width: 40px;
         height: auto;
     }
     
@@ -101,7 +122,7 @@
         zoom: 1;
         *display: inline;
         border: solid 2px #f17716;
-        padding: 3px 5px;
+        padding: 0px 5px;
         border-radius: 2em;
         background: #f17716;
     }
@@ -115,24 +136,9 @@
         border-radius: 2em;
         background: #fbfbf9;
         position: relative;
-        left: 19%;
+        left: 22.2%;
         top: 70px;
         background-color: rgba(0, 0, 0, .7);
-    }
-    .table {
-        display: inline-block;
-        zoom: 2;
-        *display: inline;
-        border: none;
-        padding: 3px 5px;
-        border-radius: 2em;
-        background: #fbfbf9;
-        position: relative;
-        left: 19%;
-        top: 90px;
-        background-color: rgba(0, 0, 0, .7);
-        font: normal 15px/90% sans-serif;
-        color: white;
     }
     
     .searchform2 input {
@@ -142,7 +148,7 @@
         zoom: 1;
         *display: inline;
         border: none;
-        padding: 2% 5px 5px;
+        padding: 2. 5px 5px;
         border-radius: 2em;
         background: none;
         opacity: 0.5;
@@ -156,4 +162,160 @@
         padding: 2px 5px;
         border-radius: 2em;
         background: #f17716;
+    }
+    
+    .container-footer-all {
+        width: 100%;
+        max-width: 1200px;
+        margin: auto;
+        padding: 10px;
+        background: white;
+    }
+    
+    .container-body {
+        display: flex;
+        justify-content: space-between;
+        background: white;
+    }
+    
+    .colum1 {
+        max-width: 400px;
+    }
+    
+    .colum1 h1 {
+        font-size: 22px;
+    }
+    
+    .colum1 p {
+        font-size: 14px;
+        color: black;
+        margin-top: 20px;
+    }
+    
+    .colum2 {
+        max-width: 400px;
+    }
+    
+    .colum2 h1 {
+        font-size: 22px;
+    }
+    
+    .row {
+        margin-top: 20px;
+        display: flex;
+    }
+    
+    .row img {
+        width: 36px;
+        height: 36px;
+    }
+    
+    .row label {
+        margin-top: 10px;
+        margin-left: 20px;
+        color: black;
+    }
+    
+    .colum3 {
+        max-width: 400px;
+    }
+    
+    .colum3 h1 {
+        font-size: 22px;
+    }
+    
+    .row2 {
+        margin-top: 20px;
+        display: flex;
+    }
+    
+    .row2 img {
+        width: 36px;
+        height: 36px;
+    }
+    
+    .row2 label {
+        margin-top: 10px;
+        margin-left: 20px;
+        max-width: 140px;
+    }
+    
+    @media screen and (max-width: 1100px) {
+        .container-body {
+            flex-wrap: wrap;
+        }
+        .colum1 {
+            max-width: 100%;
+        }
+        .colum2,
+        .colum3 {
+            margin-top: 40px;
+        }
+    }
+    
+    * {
+        box-sizing: border-box;
+    }
+    
+    .contact-heading h2,
+    .contact-heading h3 {
+        text-align: center;
+    }
+    
+    .contact-heading h3 {
+        margin-bottom: 30px;
+    }
+    
+    .col-md-4,
+    .col-md-12 {
+        float: left;
+    }
+    
+    .btn {
+        margin: 0px auto;
+        margin-top: 20px;
+        display: block;
+    }
+    
+    .img1,
+    .img2 {
+        width: 31.33%;
+        margin: 0 1%;
+        float: left;
+    }
+    
+    .img1 img,
+    .img2 img {
+        width: 100%;
+        height: auto;
+    }
+    
+    footer {
+        height: auto !important;
+        padding: 40px;
+        float: left;
+        width: 100%;
+    }
+    
+    footer a {
+        width: 100%;
+        text-align: center;
+        float: left;
+    }
+    
+    @media screen and (max-width: 800px) {
+        .img1 {
+            width: 100%;
+            margin: 0 0 20px 0;
+        }
+        .img2 {
+            width: 48%;
+        }
+    }
+    
+    @media screen and (max-width: 400px) {
+        .img2 {
+            width: 100%;
+            margin: 0 0 20px 0;
+        }
     }

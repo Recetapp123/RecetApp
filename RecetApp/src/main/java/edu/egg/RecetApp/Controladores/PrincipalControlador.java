@@ -27,6 +27,11 @@ public class PrincipalControlador {
     public String iniciosion() {
         return "indexNoLogueado";
     }
+    
+    @GetMapping("/prueba")
+    public String prueba() {
+        return "index";
+    }
 
     @GetMapping("/indexLogueado")
     public String inicio(Model model) {
