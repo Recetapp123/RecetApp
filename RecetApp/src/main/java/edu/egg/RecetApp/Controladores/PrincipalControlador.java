@@ -59,19 +59,18 @@ public class PrincipalControlador {
         return "indexNoLogueado";
     }
 
-    @GetMapping("/buscarLogueado/{MAIL}/{CLAVE}")
-    public String buscadorLogueado(@RequestParam(required = false) String q, @RequestParam(required = false) String error, Model model, @RequestParam(required = false) String MAIL, @RequestParam( required = false) String CLAVE) {
+    @GetMapping("/buscarLogueado")
+    public String buscadorLogueado(@RequestParam(required = false) String q, @RequestParam(required = false) String error, ModelMap model,@RequestParam(name = "MAIL", required = false) String MAIL, @RequestParam(name = "CLAVE", required = false) String CLAVE) {
         List<Ingrediente> ingredientes;
         Usuario usuario= usuarioServicio.buscarUsuario(MAIL, CLAVE);
-        
         if (q != null) {
             ingredientes = ingredienteServicio.buscarIngredientes(q);
         } else {
             ingredientes = ingredienteServicio.buscarIngredientes();
         }
-//        modelo.put("q",q);
-//        modelo.put("ingredientes", ingredientes);
-//        modelo.put("error",error);
+        model.put("q",q);
+        model.put("ingredientes", ingredientes);
+        model.put("error",error);
         model.addAttribute("usuario", usuario);
         return "indexLogueado";
     }
