@@ -22,7 +22,6 @@ public class Receta {
     private String id;
     
     private String nombre;
-    private Integer ccal;
     private String tiempo;
     private boolean vegetariano;
     private boolean vegano;
@@ -71,19 +70,6 @@ public class Receta {
         this.nombre = nombre;
     }
 
-    /**
-     * @return the ccal
-     */
-    public Integer getCcal() {
-        return ccal;
-    }
-
-    /**
-     * @param ccal the ccal to set
-     */
-    public void setCcal(Integer ccal) {
-        this.ccal = ccal;
-    }
 
     /**
      * @return the tiempo

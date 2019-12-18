@@ -8,6 +8,7 @@ package edu.egg.RecetApp.Controladores;
 import edu.egg.RecetApp.Entidades.Ingrediente;
 import edu.egg.RecetApp.Servicios.IngredienteServicio;
 import edu.egg.RecetApp.Servicios.RecetaServicio;
+import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -35,11 +36,7 @@ public class RecetaControlador {
     public String nuevoIng(){
         return "crearingrediente";
     }
-    @GetMapping("/")
-    public String nuevareceta() {
-        return "nuevareceta";
-    }
-
+    
     @PostMapping("/crear")
     public String nuevoIngrediente(@RequestParam MultipartFile archivo, @RequestParam(required = false) String nombre) {
         System.out.println("holasss");
@@ -50,15 +47,28 @@ public class RecetaControlador {
         }
         return "/crearingrediente";
     }
+    
+    @GetMapping("/")
+    public String nuevareceta() {
+        return "nuevareceta";
+    }
+    
 
-    @PostMapping("/nuevareceta")
-    public String nuevareceta(@RequestParam(required = false) MultipartFile archivo, @RequestParam(required = false) String nombre, @RequestParam(required = false) Integer ccal, @RequestParam String tiempo, @RequestParam(required = false) boolean vegetariano, @RequestParam(required = false) boolean vegano, @RequestParam(required = false) boolean celiaco, @RequestParam(required = false) List<Ingrediente> ingredienteEntidad, @RequestParam(required = false) String descripcion, @RequestParam(required = false) String preparacion) {
+    @PostMapping("/nuevarecetaCrear")
+    public String nuevareceta(@RequestParam(required = false) MultipartFile archivo,@RequestParam(required = false) Ingrediente i1,@RequestParam(required = false) Ingrediente i2,@RequestParam(required = false) Ingrediente i3,@RequestParam(required = false) Ingrediente i4,@RequestParam(required = false) Ingrediente i5,@RequestParam(required = false) Ingrediente i6,@RequestParam(required = false) Ingrediente i7,@RequestParam(required = false) Ingrediente i8,@RequestParam(required = false) Ingrediente i9,@RequestParam(required = false) Ingrediente i10, @RequestParam(required = false) String nombre, @RequestParam(required = false) Integer ccal, @RequestParam String tiempo, @RequestParam(required = false) boolean vegetariano, @RequestParam(required = false) boolean vegano, @RequestParam(required = false) boolean celiaco, @RequestParam(required = false) List<Ingrediente> ingredienteEntidad, @RequestParam(required = false) String descripcion) {
         try {
-            for (Ingrediente ingrediente : ingredienteEntidad) {
-                ingredienteServicio.nuevoIngrediente(nombre, archivo);
-            }
-            recetaServicio.nuevaReceta(nombre, ccal, tiempo, archivo, vegetariano, vegano, celiaco, ingredienteEntidad, descripcion, preparacion);
-
+            List <Ingrediente> ingredientes = new ArrayList<>();
+            ingredientes.add(i1);
+            ingredientes.add(i2);
+            ingredientes.add(i3);
+            ingredientes.add(i4);
+            ingredientes.add(i5);
+            ingredientes.add(i6);
+            ingredientes.add(i7);
+            ingredientes.add(i8);
+            ingredientes.add(i9);
+            ingredientes.add(i10);
+            recetaServicio.nuevaReceta(nombre, tiempo, archivo, vegetariano, vegano, celiaco, ingredientes, descripcion);
         } catch (Exception ex) {
             return "redirect:/receta/nuevareceta?id=" + nombre + "&error=" + ex.getMessage();
         }

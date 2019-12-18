@@ -22,18 +22,15 @@ public class RecetaServicio {
     FotoServicio fotoServicio;
 
     @Transactional
-    public void nuevaReceta(String nombre, Integer ccal, String tiempo, MultipartFile archivo, boolean vegetariano, boolean vegano, boolean celiaco, List<Ingrediente> ingredienteEntidad, String descripcion, String preparacion) throws ErrorServicio {
-        validar(nombre, ccal, tiempo, descripcion, preparacion);
+    public void nuevaReceta(String nombre, String tiempo, MultipartFile archivo, boolean vegetariano, boolean vegano, boolean celiaco, List<Ingrediente> ingredienteEntidad, String descripcion) throws ErrorServicio {
+        validar(nombre, tiempo, descripcion);
         Receta receta = new Receta();
         receta.setNombre(nombre);
         receta.setTiempo(tiempo);
-        receta.setCcal(ccal);
         receta.setVegano(vegano);
-        receta.setCcal(ccal);
         receta.setVegetariano(vegetariano);
         receta.setCeliaco(celiaco);
         receta.setDescripcion(descripcion);
-        receta.setPreparacion(preparacion);
         Foto foto = fotoServicio.guardar(archivo);
         receta.setFoto(foto);
         receta.setIngredienteentidad(ingredienteEntidad);
@@ -42,17 +39,15 @@ public class RecetaServicio {
 
     @Transactional
     public void modificarReceta(String id, String nombre, Integer ccal, String tiempo, MultipartFile archivo, boolean vegetariano, boolean vegano, boolean celiaco, List<Ingrediente> ingredienteEntidad, String descripcion, String preparacion) throws ErrorServicio {
-        validar(nombre, ccal, tiempo, descripcion, preparacion);
+        validar(nombre, tiempo, descripcion);
         Optional<Receta> respuesta = recetaRepositorio.findById(id);
         if (respuesta.isPresent()) {
             Receta receta = recetaRepositorio.findById(id).get();
             receta.setNombre(nombre);
             receta.setTiempo(tiempo);
             receta.setVegano(vegano);
-            receta.setCcal(ccal);
             receta.setVegetariano(vegetariano);
             receta.setCeliaco(celiaco);
-            receta.setCcal(ccal);
             Foto foto = fotoServicio.guardar(archivo);
             receta.setFoto(foto);
             receta.setIngredienteentidad(ingredienteEntidad);
@@ -90,21 +85,17 @@ public class RecetaServicio {
         }
     }
 
-    public void validar(String nombre, Integer ccal, String tiempo, String descripcion, String preparacion) throws ErrorServicio {
+    public void validar(String nombre, String tiempo, String descripcion) throws ErrorServicio {
         if (nombre == null || nombre.isEmpty()) {
             throw new ErrorServicio("El nombre de la receta no puede ser nulo.");
         }
-        if (ccal == null) {
-            throw new ErrorServicio("Las calorias no pueden ser nulas.");
-        }
+        
         if (tiempo == null || tiempo.isEmpty()) {
             throw new ErrorServicio("El tiempo de cocción no puede ser nulo.");
         }
         if (descripcion == null || descripcion.isEmpty()) {
             throw new ErrorServicio("La descripión no puede estar vacía");
         }
-        if (preparacion == null || preparacion.isEmpty()) {
-            throw new ErrorServicio("Los pasos a seguir no pueden ser nulos");
-        }
+        
     }
 }

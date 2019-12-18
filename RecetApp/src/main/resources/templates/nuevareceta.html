@@ -1,44 +1,124 @@
-<!DOCTYPE html>
-<html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <title>Registrar</title>
-        <link rel="stylesheet" href="/css/Register1.css">
-        <link rel="stylesheet" href="/css/switchreceta.css">
-    </head>
-    <body>
-        <div class="register-box">
-            <img class="r1" src="img/Logo.jpeg" alt="">
-            <h1>Registrarse</h1>
-            <form action="nuevareceta" method="POST">
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>Recetas</title>
+     <link rel="stylesheet" href="/css/RecetasCSS.css">
+ </head>
+
+ <header>
+    <div id="logo">
+        <img alt="" class="logo" src="/img/F.jpg">
+        </img>
+    </div>
+    <nav class="Atras">
+        <ul>
+            <li><a href="Pagina_Principal.html">Volver</a></li>
+        </ul>
+    </nav>
+</header>
 
 
 
-                <label for="nombre">Nombre</label>
-                <input type="text"  name ="nombre">
-
-                <label for="ccal">Calorias</label>
-                <input type="number"  name="ccal">
-
-                <label for="mail">Tiempo</label>
-                <input type="text" name="tiempo">
+<body>
+    <form action="nuevarecetaCrear" method="POST">   
+<div class="Todo">
+ <img src="/img/comida.jpg" alt="" class="foto">  
 
 
-                <label class="switch">
-                    <input type="checkbox" name="celiaco">
-                    <span class="slider round"></span>
-                </label>
-                <label class="switch">
-                    <input type="checkbox" name="vegetariano">
-                    <span class="slider round"></span>
-                </label>
-                <label class="switch">
-                    <input type="checkbox" name="vegano">
-                    <span class="slider round"></span>
-                </label>
-                
-                <button type="submit">Registrar</button><p></p>
-            </form>
-        </div>
-    </body>
-</html>
+
+
+<div class="Datos1">
+    <p>Nombre receta </p>
+    <input name="nombre" type="text"  maxlength="30" placeholder="Nombre">
+
+   
+
+    <p>Tiempo </p>
+    <input name="tiempo" type="text" maxlength="10" placeholder="tiempo">
+
+    <label class="container">Celiaco
+        <input type="checkbox" checked="checked">
+        <span class="checkmark"></span>
+      </label>
+      
+      <label class="container">Vegetariano
+        <input type="checkbox">
+        <span class="checkmark"></span>
+      </label>
+      
+      <label class="container">Vegano 
+        <input type="checkbox">
+        <span class="checkmark"></span>
+
+
+</div>
+
+<div class="Ingredientes">
+
+<p>Ingredientes:</p>
+
+<input  name="i1"  type="text" placeholder="Ingrediente 1">
+
+<br><br>
+
+<input name="i2"  type="text" placeholder="Ingrediente 2">
+
+<br><br>
+
+<input name="i3" type="text" placeholder="Ingrediente 3">
+
+<br><br>
+
+<input name="i4" type="text" placeholder="Ingrediente 4">
+
+<br><br>
+
+<input name="i5" type="text" placeholder="Ingrediente 5">
+
+<br><br>
+
+<input name="i6" type="text" placeholder="Ingrediente 6">
+
+<br><br>
+
+<input name="i7"  type="text" placeholder="Ingrediente 7">
+
+<br><br>
+
+<input name="i8" type="text" placeholder="Ingrediente 8">
+
+<br><br>
+
+<input name="i9" type="text" placeholder="Ingrediente 9">
+
+<br><br>
+
+<input name="i10" type="text" placeholder="Ingrediente 10">
+
+</div>
+
+
+
+ <div class="Preparacion">
+    <b>Creada por: <u>Recetapp</u></b>  
+    <h2>Preparación</h2>
+  
+    <textarea name="Receta" id="Receta" cols="40" rows="10" placeholder="Escribe tu receta aqui"></textarea>
+    <input name="descripcion" type="text">
+ </div>
+
+</div>
+
+
+<div class="Crear">
+    <input  type="submit" value="Crear receta">
+</div> 
+
+</form> 
+</body>
+
+
+ </html>
