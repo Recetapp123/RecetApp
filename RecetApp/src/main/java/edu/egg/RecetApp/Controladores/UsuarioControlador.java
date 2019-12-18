@@ -58,8 +58,6 @@ public class UsuarioControlador {
     public String register(@RequestParam(required = false) String id, @RequestParam(required = false) MultipartFile archivo, @RequestParam(required = false) String nombre, @RequestParam(required = false) String apellido, @RequestParam String mail, @RequestParam(required = false) String clave) {
         try {
             usuarioServicio.registrar(archivo, nombre, apellido, mail, clave);
-
-//            usuarioServicio.registrar(null, "Fabri", "Perez", "elo@hotmail.com", "12345678899");
         } catch (Exception ex) {
             return "redirect:/usuario/register?id=" + id + "&error=" + ex.getMessage();
         }

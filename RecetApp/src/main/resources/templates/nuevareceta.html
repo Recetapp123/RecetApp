@@ -1,124 +1,270 @@
- <!DOCTYPE html>
- <html lang="en">
- <head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-     <title>Recetas</title>
-     <link rel="stylesheet" href="/css/RecetasCSS.css">
- </head>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
+    <head>
 
- <header>
-    <div id="logo">
-        <img alt="" class="logo" src="/img/F.jpg">
-        </img>
-    </div>
-    <nav class="Atras">
-        <ul>
-            <li><a href="Pagina_Principal.html">Volver</a></li>
-        </ul>
-    </nav>
-</header>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
+        <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <meta http-equiv="X-UA-Compatible" content="ie=edge">
+                    <title>Recetas</title>
+                    <link rel="stylesheet" href="/css/RecetasCSS.css">
+                        <script src="js/jquery-1.9.1.min.js"></script>
+                        </head>
 
-
-<body>
-    <form action="nuevarecetaCrear" method="POST">   
-<div class="Todo">
- <img src="/img/comida.jpg" alt="" class="foto">  
-
+                        <header>
+                            <div id="logo">
+                                <img alt="" class="logo" src="/img/F.jpg">
+                                </img>
+                            </div>
+                            <nav class="Atras">
+                                <ul>
+                                    <li><a href="Pagina_Principal.html">Volver</a></li>
+                                </ul>
+                            </nav>
+                        </header>
 
 
 
-<div class="Datos1">
-    <p>Nombre receta </p>
-    <input name="nombre" type="text"  maxlength="30" placeholder="Nombre">
-
-   
-
-    <p>Tiempo </p>
-    <input name="tiempo" type="text" maxlength="10" placeholder="tiempo">
-
-    <label class="container">Celiaco
-        <input type="checkbox" checked="checked">
-        <span class="checkmark"></span>
-      </label>
-      
-      <label class="container">Vegetariano
-        <input type="checkbox">
-        <span class="checkmark"></span>
-      </label>
-      
-      <label class="container">Vegano 
-        <input type="checkbox">
-        <span class="checkmark"></span>
-
-
-</div>
-
-<div class="Ingredientes">
-
-<p>Ingredientes:</p>
-
-<input  name="i1"  type="text" placeholder="Ingrediente 1">
-
-<br><br>
-
-<input name="i2"  type="text" placeholder="Ingrediente 2">
-
-<br><br>
-
-<input name="i3" type="text" placeholder="Ingrediente 3">
-
-<br><br>
-
-<input name="i4" type="text" placeholder="Ingrediente 4">
-
-<br><br>
-
-<input name="i5" type="text" placeholder="Ingrediente 5">
-
-<br><br>
-
-<input name="i6" type="text" placeholder="Ingrediente 6">
-
-<br><br>
-
-<input name="i7"  type="text" placeholder="Ingrediente 7">
-
-<br><br>
-
-<input name="i8" type="text" placeholder="Ingrediente 8">
-
-<br><br>
-
-<input name="i9" type="text" placeholder="Ingrediente 9">
-
-<br><br>
-
-<input name="i10" type="text" placeholder="Ingrediente 10">
-
-</div>
+                        <body>
+                            <form action="nuevarecetaCrear" method="POST">   
+                                <div class="Todo">
+                                    <img src="/img/comida.jpg" alt="" class="foto">  
 
 
 
- <div class="Preparacion">
-    <b>Creada por: <u>Recetapp</u></b>  
-    <h2>Preparación</h2>
-  
-    <textarea name="Receta" id="Receta" cols="40" rows="10" placeholder="Escribe tu receta aqui"></textarea>
-    <input name="descripcion" type="text">
- </div>
 
-</div>
+                                        <div class="Datos1">
+                                            <p>Nombre receta </p>
+                                            <input name="nombre" type="text"  maxlength="30" placeholder="Nombre">
 
 
-<div class="Crear">
-    <input  type="submit" value="Crear receta">
-</div> 
 
-</form> 
-</body>
+                                                <p>Tiempo </p>
+                                                <input name="tiempo" type="text" maxlength="10" placeholder="tiempo">
+
+                                                    <label class="container">Celiaco
+                                                        <input type="checkbox" checked="checked">
+                                                            <span class="checkmark"></span>
+                                                    </label>
+
+                                                    <label class="container">Vegetariano
+                                                        <input type="checkbox">
+                                                            <span class="checkmark"></span>
+                                                    </label>
+
+                                                    <label class="container">Vegano 
+                                                        <input type="checkbox">
+                                                            <span class="checkmark"></span>
 
 
- </html>
+                                                            </div>
+
+                                                            <div class="Ingredientes">
+
+                                                                <p>Ingredientes:</p>
+                                                                <form class="form-inline my-2 my-lg-0" action="/receta/nuevarecetaCrear" method="GET">
+                                                                    <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Buscar"  name="q" th:value="${q}">
+                                                                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar <i class="fa fa-search"></i></button>
+                                                                </form>
+                                                                <div id="resultadoBusqueda"></div>
+
+                                                                <table class="table">
+                                                                    <thead class="thead-light">
+                                                                        <tr>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr th:each="ingrediente : ${ingredientes}">
+                                                                            <td><img th:src="@{/inicio/image/}+${ingrediente.id}" style="max-width: 10%;max-height: 10%;"/></td>
+                                                                            <td th:text="${ingrediente.nombre}"></td>
+
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                                <br><br>
+                                                                        <input type="text" placeholder="Ingrediente 2" name="i2" th:value="${q}">
+                                                                            <table class="table">
+                                                                                <thead class="thead-light">
+                                                                                    <tr>
+                                                                                    </tr>
+
+
+                                                                                </thead>
+                                                                                <tbody>
+                                                                                    <tr th:each="ingrediente : ${ingredientes}">
+                                                                                        <td><img th:src="@{/inicio/image/}+${ingrediente.id}" style="max-width: 10%;max-height: 10%;"/></td>
+                                                                                        <td th:text="${ingrediente.nombre}"></td>
+
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                            <br><br>
+
+                                                                                    <input name="i3" type="text" placeholder="Ingrediente 3"th:value="${q}">
+                                                                                        <table class="table">
+                                                                                            <thead class="thead-light">
+                                                                                                <tr>
+                                                                                                </tr>
+
+
+                                                                                            </thead>
+                                                                                            <tbody>
+                                                                                                <tr th:each="ingrediente : ${ingredientes}">
+                                                                                                    <td><img th:src="@{/inicio/image/}+${ingrediente.id}" style="max-width: 10%;max-height: 10%;"/></td>
+                                                                                                    <td th:text="${ingrediente.nombre}"></td>
+
+                                                                                                </tr>
+                                                                                            </tbody>
+                                                                                        </table>
+                                                                                        <br><br>
+
+                                                                                                <input name="i4" type="text" placeholder="Ingrediente 4"th:value="${q}">
+                                                                                                    <table class="table">
+                                                                                                        <thead class="thead-light">
+                                                                                                            <tr>
+                                                                                                            </tr>
+
+
+                                                                                                        </thead>
+                                                                                                        <tbody>
+                                                                                                            <tr th:each="ingrediente : ${ingredientes}">
+                                                                                                                <td><img th:src="@{/inicio/image/}+${ingrediente.id}" style="max-width: 10%;max-height: 10%;"/></td>
+                                                                                                                <td th:text="${ingrediente.nombre}"></td>
+
+                                                                                                            </tr>
+                                                                                                        </tbody>
+                                                                                                    </table>
+                                                                                                    <br><br>
+
+                                                                                                            <input name="i5" type="text" placeholder="Ingrediente 5"th:value="${q}">
+                                                                                                                <table class="table">
+                                                                                                                    <thead class="thead-light">
+                                                                                                                        <tr>
+                                                                                                                        </tr>
+
+
+                                                                                                                    </thead>
+                                                                                                                    <tbody>
+                                                                                                                        <tr th:each="ingrediente : ${ingredientes}">
+                                                                                                                            <td><img th:src="@{/inicio/image/}+${ingrediente.id}" style="max-width: 10%;max-height: 10%;"/></td>
+                                                                                                                            <td th:text="${ingrediente.nombre}"></td>
+
+                                                                                                                        </tr>
+                                                                                                                    </tbody>
+                                                                                                                </table>
+                                                                                                                <br><br>
+
+                                                                                                                        <input name="i6" type="text" placeholder="Ingrediente 6"th:value="${q}">
+                                                                                                                            <table class="table">
+                                                                                                                                <thead class="thead-light">
+                                                                                                                                    <tr>
+                                                                                                                                    </tr>
+
+
+                                                                                                                                </thead>
+                                                                                                                                <tbody>
+                                                                                                                                    <tr th:each="ingrediente : ${ingredientes}">
+                                                                                                                                        <td><img th:src="@{/inicio/image/}+${ingrediente.id}" style="max-width: 10%;max-height: 10%;"/></td>
+                                                                                                                                        <td th:text="${ingrediente.nombre}"></td>
+
+                                                                                                                                    </tr>
+                                                                                                                                </tbody>
+                                                                                                                            </table>
+                                                                                                                            <br><br>
+
+                                                                                                                                    <input name="i7"  type="text" placeholder="Ingrediente 7"th:value="${q}">
+                                                                                                                                        <table class="table">
+                                                                                                                                            <thead class="thead-light">
+                                                                                                                                                <tr>
+                                                                                                                                                </tr>
+
+
+                                                                                                                                            </thead>
+                                                                                                                                            <tbody>
+                                                                                                                                                <tr th:each="ingrediente : ${ingredientes}">
+                                                                                                                                                    <td><img th:src="@{/inicio/image/}+${ingrediente.id}" style="max-width: 10%;max-height: 10%;"/></td>
+                                                                                                                                                    <td th:text="${ingrediente.nombre}"></td>
+
+                                                                                                                                                </tr>
+                                                                                                                                            </tbody>
+                                                                                                                                        </table>
+                                                                                                                                        <br><br>
+                                                                                                                                                <input name="i8" type="text" placeholder="Ingrediente 8"th:value="${q}">
+                                                                                                                                                    <table class="table">
+                                                                                                                                                        <thead class="thead-light">
+                                                                                                                                                            <tr>
+                                                                                                                                                            </tr>
+
+
+                                                                                                                                                        </thead>
+                                                                                                                                                        <tbody>
+                                                                                                                                                            <tr th:each="ingrediente : ${ingredientes}">
+                                                                                                                                                                <td><img th:src="@{/inicio/image/}+${ingrediente.id}" style="max-width: 10%;max-height: 10%;"/></td>
+                                                                                                                                                                <td th:text="${ingrediente.nombre}"></td>
+
+                                                                                                                                                            </tr>
+                                                                                                                                                        </tbody>
+                                                                                                                                                    </table>
+                                                                                                                                                    <br><br>
+
+                                                                                                                                                            <input name="i9" type="text" placeholder="Ingrediente 9"th:value="${q}">
+                                                                                                                                                                <table class="table">
+                                                                                                                                                                    <thead class="thead-light">
+                                                                                                                                                                        <tr>
+                                                                                                                                                                        </tr>
+
+
+                                                                                                                                                                    </thead>
+                                                                                                                                                                    <tbody>
+                                                                                                                                                                        <tr th:each="ingrediente : ${ingredientes}">
+                                                                                                                                                                            <td><img th:src="@{/inicio/image/}+${ingrediente.id}" style="max-width: 10%;max-height: 10%;"/></td>
+                                                                                                                                                                            <td th:text="${ingrediente.nombre}"></td>
+
+                                                                                                                                                                        </tr>
+                                                                                                                                                                    </tbody>
+                                                                                                                                                                </table>
+                                                                                                                                                                <br><br>
+
+                                                                                                                                                                        <input name="i10" type="text" placeholder="Ingrediente 10"th:value="${q}">
+                                                                                                                                                                            <table class="table">
+                                                                                                                                                                                <thead class="thead-light">
+                                                                                                                                                                                    <tr>
+                                                                                                                                                                                    </tr>
+
+
+                                                                                                                                                                                </thead>
+                                                                                                                                                                                <tbody>
+                                                                                                                                                                                    <tr th:each="ingrediente : ${ingredientes}">
+                                                                                                                                                                                        <td><img th:src="@{/inicio/image/}+${ingrediente.id}" style="max-width: 10%;max-height: 10%;"/></td>
+                                                                                                                                                                                        <td th:text="${ingrediente.nombre}"></td>
+
+                                                                                                                                                                                    </tr>
+                                                                                                                                                                                </tbody>
+                                                                                                                                                                            </table>
+                                                                                                                                                                            </div>
+
+
+
+                                                                                                                                                                            <div class="Preparacion">
+                                                                                                                                                                                <b>Creada por: <u>Recetapp</u></b>  
+                                                                                                                                                                                <h2>Preparación</h2>
+
+                                                                                                                                                                                <textarea name="Receta" id="Receta" cols="40" rows="10" placeholder="Escribe tu receta aqui"></textarea>
+                                                                                                                                                                                <input name="descripcion" type="text">
+                                                                                                                                                                            </div>
+
+                                                                                                                                                                            </div>
+
+
+                                                                                                                                                                            <div class="Crear">
+                                                                                                                                                                                <input  type="submit" value="Crear receta">
+                                                                                                                                                                            </div> 
+
+                                                                                                                                                                            </form> 
+                                                                                                                                                                            </body>
+
+
+                                                                                                                                                                            </html>
