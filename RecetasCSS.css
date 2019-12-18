@@ -66,6 +66,7 @@ body{
     width: 250px;
     position: relative;
     top: 20px;
+    border: outset  orangered 7px;
 }
 
 
@@ -130,23 +131,28 @@ top: -50px;
 .Ingredientes input {
     position: relative;
     top: -60px;
-
+   width: 240px;
+   border: none;
+   border-bottom: 1px solid #fff;
+   background: transparent;
+   color: #fff;
+   font-size: 18px;
 }
 
 
 
 .Preparacion{
-    border-radius: 15%;
+    border-radius: 10%;
     width: 750px;
-    height: 650px;
-background: white;
-    top: 423px;
+    height: 500px;
+
+    top: 358px;
     left: 637px;
     position: absolute;
     transform: translate(-50%, -50%);
     box-sizing: border-box;
     padding: 70px 30px;
-    
+background-color: rgba(0, 0, 0, 0.5);
 }
 
 
@@ -154,24 +160,25 @@ background: white;
     position: relative;
     top: -50px;
     left: 500px;
-    color:  black;
+    color:  white;
     
 }
 
 
 .Preparacion h2{
-color: black;
+color: white;
 position: relative;
 left:  0px;
 top: -50px;
 }
 
 .Preparacion textarea{
+    color: white;
     height: 480px;
     width:680px;
     border: none;
     font-size: 15px;
-   background-color: rgba(0, 0, 0, .0);
+   background-color: rgba(0, 0, 0, 0);
     position: relative;
     top: -50px;
 outline: none;
@@ -259,15 +266,15 @@ outline: none;
 .Crear input[type="submit"]{
 	border: none;
 	outline: none;
-    height: 50px;
-    width: 250px;
+    height: 60px;
+    width: 750px;
 	background: #b80f22;
 	color: #fff;
 	font-size: 18px;
 	border-radius: 20px; 
     position: relative;
     top: 300px;
-    left: 1050px;
+    left: 270px;
 }
 
 
