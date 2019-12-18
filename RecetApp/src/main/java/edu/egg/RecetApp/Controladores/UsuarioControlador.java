@@ -2,14 +2,7 @@ package edu.egg.RecetApp.Controladores;
 
 import edu.egg.RecetApp.Entidades.Usuario;
 import edu.egg.RecetApp.Servicios.UsuarioServicio;
-import java.io.IOException;
 import java.util.List;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -30,27 +23,30 @@ public class UsuarioControlador {
     public String register() {
         return "register";
     }
-
-    protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        HttpSession session = req.getSession();
-    }
-    
+//    @GetMapping("/lo")
+//    public String login(){
+//        return "login";
+//    }
 
     @GetMapping("/login")
-    public String login(@RequestParam(name = "MAIL", required = false) String MAIL, @RequestParam(name = "CLAVE", required = false) String CLAVE, @RequestParam(required = false) String error, ModelMap modelo) {
+    public String login(@RequestParam(name = "MAIL", required = false) String MAIL, @RequestParam(name="CLAVE",required = false) String CLAVE, @RequestParam(required = false) String error, ModelMap modelo) {
         Usuario usuario;
-        if (MAIL != null && CLAVE != null) {
+        if (MAIL != null && CLAVE != null) {            
             usuario = usuarioServicio.buscarUsuario(MAIL, CLAVE);
             modelo.put("usuario", usuario);
-            if (usuario == null) {
+           
+            if(usuario==null){
                 return "login";
             }
-            
-            String id = usuario.getId();
-            
-            return "redirect:/inicio/buscarLogueado?MAIL="+MAIL+"&CLAVE="+CLAVE;
-
+            return "indexLogueado";
+         
         }
+//        try{
+//            usuarioServicio.login(mail, clave);
+//            
+//        }catch (Exception ex){
+//            return "redirect:/usuario/register?id=" + mail + "&error=" + ex.getMessage();
+//        }
         return "login";
     }
 

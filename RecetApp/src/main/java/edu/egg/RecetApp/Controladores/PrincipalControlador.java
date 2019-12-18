@@ -3,9 +3,7 @@ package edu.egg.RecetApp.Controladores;
 import edu.egg.RecetApp.Entidades.Ingrediente;
 import edu.egg.RecetApp.Entidades.Usuario;
 import edu.egg.RecetApp.Servicios.IngredienteServicio;
-import edu.egg.RecetApp.Servicios.UsuarioServicio;
 import java.util.List;
-import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -25,9 +23,6 @@ public class PrincipalControlador {
 
     @Autowired
     private IngredienteServicio ingredienteServicio;
-    
-    @Autowired
-    UsuarioServicio usuarioServicio;
 
     @GetMapping("/")
     public String iniciosion() {
@@ -59,11 +54,12 @@ public class PrincipalControlador {
         return "indexNoLogueado";
     }
 
-    @GetMapping("/buscarLogueado/{MAIL}/{CLAVE}")
-    public String buscadorLogueado(@RequestParam(required = false) String q, @RequestParam(required = false) String error, Model model, @RequestParam(required = false) String MAIL, @RequestParam( required = false) String CLAVE) {
+    @GetMapping("/buscarLogueado")
+    public String buscadorLogueado(@RequestParam(required = false) String q, @RequestParam(required = false) String error, Model model) {
         List<Ingrediente> ingredientes;
-        Usuario usuario= usuarioServicio.buscarUsuario(MAIL, CLAVE);
-        
+        Usuario usuario;
+        UsuarioControlador usuarioControlador;
+
         if (q != null) {
             ingredientes = ingredienteServicio.buscarIngredientes(q);
         } else {
@@ -72,7 +68,7 @@ public class PrincipalControlador {
 //        modelo.put("q",q);
 //        modelo.put("ingredientes", ingredientes);
 //        modelo.put("error",error);
-        model.addAttribute("usuario", usuario);
+        model.addAttribute("usuario", null);
         return "indexLogueado";
     }
 

@@ -69,8 +69,8 @@
 
         <section class="FBusc">
             <section class="searchform2">
-                <form th:href="@{/inicio/buscarLogueado(MAIL=${usuario.mail}+CLAVE=${usuario.clave})}" method="GET">
-                    <input type="search" placeholder="¿Qué ingredientes tenés?" name="q" th:value="${q}" >
+                <form action="/inicio/buscarLogueado" method="GET">
+                    <input type="search" placeholder="¿Qué ingredientes tenés?" name="q" th:value="${q}">
                     <button><img class="buscador2" src="/img/Buscar.png" alt=""></button>
                 </form>
             </section>

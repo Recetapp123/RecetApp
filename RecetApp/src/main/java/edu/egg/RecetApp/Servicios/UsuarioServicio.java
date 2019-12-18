@@ -105,9 +105,6 @@ public class UsuarioServicio {
         return usuarioRepositorio.findByMailAndClave(MAIL, CLAVE);
     }
 
-     public Optional<Usuario> buscarUsuarioPorId(String id) {
-        return usuarioRepositorio.findById(id);
-    }
     public void validar(String nombre, String apellido, String mail, String clave) throws ErrorServicio {
         if (nombre == null || nombre.isEmpty()) {
             throw new ErrorServicio("El nombre del usuario no puede ser nulo.");
