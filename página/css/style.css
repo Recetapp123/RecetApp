@@ -6,7 +6,7 @@
     }
     
     .FBusc {
-        background: URL(../img/Fondo.jpeg) no-repeat;
+        background: URL(../img/Fondo.jpg) no-repeat;
         background-size: cover;
         height: 625px;
     }
@@ -138,7 +138,7 @@
         position: relative;
         left: 22.2%;
         top: 70px;
-        background-color: rgba(0, 0, 0, .7);
+        background-color: rgba(0, 0, 0, .83);
     }
     
     .searchform2 input {
@@ -169,13 +169,13 @@
         max-width: 1200px;
         margin: auto;
         padding: 10px;
-        background: white;
+        background: #FBFBF9;
     }
     
     .container-body {
         display: flex;
         justify-content: space-between;
-        background: white;
+        background: #FBFBF9;
     }
     
     .colum1 {
