@@ -13,6 +13,10 @@
         <link href="/css/style.css" rel="stylesheet">
         <link rel="stylesheet" href="/css/Pagina_PrincipalCSS.css" type="text/css"> </link>
         <link rel="stylesheet" href="/js/estilo.js">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+        <!-- Select2 CSS -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
 
     </head>
 
@@ -59,7 +63,7 @@
 
     <body class="f1">
 
-        <section class="FBusc">
+<!--        <section class="FBusc">
             <section class="searchform2">
                 <form action="/inicio/buscarNoLogueado" method="GET">
                     <input type="search" placeholder="¿Qué ingredientes tenés?" name="q" th:value="${q}">
@@ -83,7 +87,31 @@
             </tbody>
         </table>
 
-        <section class="FSlid">
+        <section class="FSlid">-->
+
+<!-- codigo nuevo-->
+ <div class="col-md-6">
+      
+          <select id="multiple" class="js-states form-control" multiple>
+            <option>Java</option>
+            <option>Javascript</option>
+            <option>PHP</option>
+            <option>Visual Basic</option>
+          </select>
+        </div>
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Select2 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+    <script>
+     
+      $("#multiple").select2({
+          placeholder: "Select a programming language",
+          allowClear: true
+      });
+    </script>
+    
+    <!-- codigo nuevo-->
 
             <section class="py-5">
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
