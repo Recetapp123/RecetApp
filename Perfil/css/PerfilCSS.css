@@ -1,0 +1,110 @@
+
+header {
+    opacity: 100%;
+    width: 100%;
+    height: auto;
+    background-color: #f17716;
+    position: relative;
+    float: left;
+}
+.Atras {
+    width: 200;
+    height: 75%;
+    float: right;
+    background-color: #f17716;
+    font: 100% sans-serif;
+    font-size: 150%;
+}
+
+
+
+.Atras ul li {
+    list-style: none;
+    float: right;
+    margin-right: 50%;
+    margin-top: 7%;
+    }
+
+.Atras ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+.Atras ul li a:hover{
+    color: black;
+}
+
+
+
+.logo {
+    width: 200px;
+    height: 75%;
+    margin: 1%;
+    position: relative;
+    display: block;
+    float: left;
+}
+
+/*----------------------------------------------------------------------------------*/
+body{
+    margin: 0;
+    padding: 0;
+    background: url(../img/Fondo1.jpg);
+    background-size: cover; 
+    font-family: sans-serif;
+    height: 130vh;
+}
+
+.foto{
+    border-radius: 50%;
+    height: 250px;
+    width: 250px;
+    position: relative;
+   top: 10px;
+}
+
+
+
+.Descripcion textarea{
+    width: 650px;
+    height: 435px;
+    position: relative;
+    left: 345px;
+    top: -165px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+   border: none;
+}
+
+.Nombre{
+    color:white;
+    position: relative;
+    top: 30px;
+    left: -240px;
+
+}
+
+
+
+input[type="submit"]{
+    position: relative;
+    top: -250px;
+    left: 1050px;
+    border: none;
+	outline: none;
+    height: 50px;
+    width: 250px;
+	background: #b80f22;
+	color: #fff;
+	font-size: 18px;
+	border-radius: 20px; 
+}
+
+input:hover{
+    color:black;
+}
+
+
+
+
+

@@ -6,7 +6,7 @@
     }
     
     .FBusc {
-        background: URL(../img/Fondo.jpeg) no-repeat;
+        background: URL(../img/Fondo.jpg) no-repeat;
         background-size: cover;
         height: 625px;
     }
@@ -138,7 +138,7 @@
         position: relative;
         left: 22.2%;
         top: 70px;
-        background-color: rgba(0, 0, 0, .7);
+        background-color: rgba(0, 0, 0, .83);
     }
     
     .searchform2 input {
@@ -169,13 +169,13 @@
         max-width: 1200px;
         margin: auto;
         padding: 10px;
-        background: white;
+        background: #FBFBF9;
     }
     
     .container-body {
         display: flex;
         justify-content: space-between;
-        background: white;
+        background: #FBFBF9;
     }
     
     .colum1 {
@@ -318,4 +318,72 @@
             width: 100%;
             margin: 0 0 20px 0;
         }
+    }
+    
+    .vistaRecetas {
+        width: 100%;
+        height: 50%;
+        background-color: #FBFBF9;
+        background-size: cover;
+        float: left;
+    }
+    
+    .categorias {
+        width: 20%;
+        height: 1000px;
+        background-color: #aaaaaa;
+        float: left;
+    }
+    
+    .categorias h1 {
+        font: normal 130% sans-serif;
+        margin-top: 25px;
+        margin-left: 50px;
+        float: left;
+        color: #1E1E1E;
+    }
+    
+    .Cat {
+        color: #aaaaaa;
+        margin-top: 35px;
+        margin-left: 15px;
+    }
+    
+    .Cat a {
+        text-decoration: none;
+        color: #1E1E1E;
+    }
+    
+    .listaRecetas {
+        width: 80%;
+        height: 1000px;
+        background-color: #FBFBF9;
+        float: left;
+    }
+    
+    .box {
+        border: solid 3px #1E1E1E;
+        width: 98%;
+        height: 150px;
+        float: right;
+        margin-top: 1%;
+        margin-right: 1%;
+        background-color: #f17716;
+    }
+    
+    .box img {
+        float: left;
+        border: solid 3px #1E1E1E;
+        height: 130px;
+        width: 100px;
+        margin-left: 30px;
+        margin-top: 6px;
+    }
+    
+    .box p {
+        font: normal 130% sans-serif;
+        margin-top: 25px;
+        margin-left: 50px;
+        float: left;
+        color: #1E1E1E;
     }
